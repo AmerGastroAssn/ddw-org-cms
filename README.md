@@ -1,4 +1,4 @@
-![DDW](https://s3.amazonaws.com/DDW/ddw-org/images/logos/ddw-color.png)
+![DDW](https://s3.amazonaws.com/DDW/ddw-org-cms/images/logos/ddw-color.png)
 # CMS
 
 Custom built CMS
@@ -9,12 +9,12 @@ Built with Angular 6, Firebase (AngularFire 4), Bootstrap 4, ngx-bootstrap and A
 
 Open up your terminal and clone the project:
 
-    git clone git@github.com:AmerGastroAssn/ddw-org.git
+    git clone git@github.com:AmerGastroAssn/ddw-org-cms.git
 
 
 Change/Move into project directory:
 
-    cd ddw-org
+    cd ddw-org-cms
 
 Install dependencies:
 
