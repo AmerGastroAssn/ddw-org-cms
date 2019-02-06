@@ -1,4 +1,4 @@
-![DDW](https://s3.amazonaws.com/DDW/ddw-org-cms/images/logos/ddw-color.png)
+![DDW](https://s3.amazonaws.com/DDW/ddw-org/images/logos/ddw-color.png)
 # CMS
 
 Custom built CMS
