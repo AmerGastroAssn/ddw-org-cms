@@ -42,3 +42,18 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+### App Files ###
+/src/environments/environment.prod.ts
+/src/environments/environment.ts
+/functions/.env
+/functions/node_modules/
+
+### Firebase ###
+/.firebase
+/.firebaserc
+/firestore.rules
+/database.rules.json
+/firestore.indexes.json
+/firebase.json
+/storage.rules
