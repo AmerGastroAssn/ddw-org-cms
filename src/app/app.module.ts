@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as firebase from 'firebase/app';
 import { environment } from '../environments/environment';
 
@@ -18,14 +18,14 @@ firebase.initializeApp(environment.firebase);
         AppComponent
     ],
     imports: [
-        BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         AngularFireModule.initializeApp(environment.firebase, environment.firebase.projectId),
         AngularFirestoreModule,
         AngularFireAuthModule,
         AngularFireStorageModule,
     ],
-    providers: [],
+    providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
