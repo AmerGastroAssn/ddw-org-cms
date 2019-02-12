@@ -4,6 +4,10 @@ import { LogoWatermarkComponent } from './components/logo-watermark/logo-waterma
 import { MobileFooternavComponent } from './components/mobile-footernav/mobile-footernav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { DropZoneDirective } from './directives/drop-zone.directive';
+import { RunScriptsDirective } from './directives/run-scripts.directive';
+import { AuthService } from './services/auth.service';
+import { UserService } from './services/user.service';
 
 import { SharedRoutingModule } from './shared-routing.module';
 
@@ -13,6 +17,8 @@ import { SharedRoutingModule } from './shared-routing.module';
         NavbarComponent,
         SidenavComponent,
         LogoWatermarkComponent,
+        RunScriptsDirective,
+        DropZoneDirective,
     ],
     imports: [
         CommonModule,
@@ -23,6 +29,12 @@ import { SharedRoutingModule } from './shared-routing.module';
         NavbarComponent,
         SidenavComponent,
         LogoWatermarkComponent,
+        RunScriptsDirective,
+        DropZoneDirective,
+    ],
+    providers: [
+        AuthService,
+        UserService,
     ]
 })
 export class SharedModule {}

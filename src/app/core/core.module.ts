@@ -8,11 +8,18 @@ import { ImagesComponent } from './components/images/images.component';
 import { LoginComponent } from './components/login/login.component';
 import { MetaComponent } from './components/meta/meta.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { CoreRoutingModule } from './core-routing.module';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { CoreRoutingModule } from './core-routing.module';
+import { AdsService } from './services/ads.service';
+import { FileService } from './services/file.service';
+import { ImageService } from './services/image.service';
+import { MetaService } from './services/meta.service';
+import { ModalService } from './services/modal.service';
+import { PrivacyPolicyService } from './services/privacy-policy.service';
+import { SettingsService } from './services/settings.service';
 
 @NgModule({
     declarations: [
@@ -31,7 +38,16 @@ import { SignupComponent } from './components/signup/signup.component';
     ],
     imports: [
         CommonModule,
-        CoreRoutingModule
+        CoreRoutingModule,
+    ],
+    providers: [
+        AdsService,
+        FileService,
+        ImageService,
+        MetaService,
+        ModalService,
+        PrivacyPolicyService,
+        SettingsService,
     ]
 })
 export class CoreModule {}
