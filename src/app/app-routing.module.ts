@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarModule } from './calendar/calendar.module';
 import { ContentSectionModule } from './content-section/content-section.module';
+import { UserModule } from './user/user.module';
 
 const routes: Routes = [
     { path: '**', redirectTo: '', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
         RouterModule,
         CalendarModule,
         ContentSectionModule,
+        UserModule,
     ]
 })
 export class AppRoutingModule {}

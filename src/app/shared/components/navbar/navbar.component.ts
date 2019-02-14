@@ -6,9 +6,9 @@ import { Observable, of } from 'rxjs';
 import 'rxjs/add/operator/take';
 import { switchMap } from 'rxjs/operators';
 import { SettingsService } from '../../../core/services/settings.service';
-import { User } from '../../models/user';
+import { User } from '../../../user/modals/user';
+import { UserService } from '../../../user/services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { UserService } from '../../services/user.service';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 
 @Component({
@@ -84,7 +84,7 @@ export class NavbarComponent implements OnInit {
 
 
         // Sets user to admin and logs user in local storage.
-        this.user$.subscribe((currentUserInfo) => {
+        this.user$.subscribe((currentUserInfo: User) => {
             if (currentUserInfo && this.afAuth.auth.currentUser) {
                 this.user = currentUserInfo;
                 this.authService.setUserInLocalStorage(currentUserInfo);

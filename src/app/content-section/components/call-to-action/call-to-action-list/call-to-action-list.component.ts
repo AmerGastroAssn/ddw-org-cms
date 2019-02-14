@@ -2,8 +2,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { User } from '../../../../shared/models/user';
 import { AuthService } from '../../../../shared/services/auth.service';
+import { User } from '../../../../user/modals/user';
 import { CallToAction } from '../../../models/call-to-action';
 import { CallToActionService } from '../../../services/call-to-action.service';
 

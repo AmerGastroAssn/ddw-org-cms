@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/internal/Observable';
-import { User } from '../models/user';
+import { User } from '../modals/user';
 
 @Injectable({
     providedIn: 'root'

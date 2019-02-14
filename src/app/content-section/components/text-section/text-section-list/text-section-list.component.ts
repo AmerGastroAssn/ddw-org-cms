@@ -4,8 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import 'rxjs/add/observable/combineLatest';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../../../shared/models/user';
 import { AuthService } from '../../../../shared/services/auth.service';
+import { User } from '../../../../user/modals/user';
 import { TextSection } from '../../../models/text-section';
 import { TextSectionService } from '../../../services/text-section.service';
 

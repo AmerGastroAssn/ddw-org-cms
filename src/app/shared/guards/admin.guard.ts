@@ -3,12 +3,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
-
 import { Observable } from 'rxjs';
-import { User } from '../models/user';
+import { User } from '../../user/modals/user';
+import { UserService } from '../../user/services/user.service';
 import { AuthService } from '../services/auth.service';
-import { UserService } from '../services/user.service';
-
 
 @Injectable({
     providedIn: 'root'

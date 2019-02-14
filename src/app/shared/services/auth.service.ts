@@ -4,13 +4,12 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/do';
 import { first, map } from 'rxjs/operators';
-import { User } from '../models/user';
-import { UserService } from './user.service';
-import * as firebase from 'firebase/app';
-
+import { User } from '../../user/modals/user';
+import { UserService } from '../../user/services/user.service';
 
 @Injectable({
     providedIn: 'root'

@@ -5,8 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ImageService } from '../../../../core/services/image.service';
-import { User } from '../../../../shared/models/user';
 import { AuthService } from '../../../../shared/services/auth.service';
+import { User } from '../../../../user/modals/user';
 import { CallToActionService } from '../../../services/call-to-action.service';
 
 @Component({

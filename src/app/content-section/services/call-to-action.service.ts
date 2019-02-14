@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
-
 import { Observable } from 'rxjs';
-import { User } from '../../shared/models/user';
 import { AuthService } from '../../shared/services/auth.service';
-
+import { User } from '../../user/modals/user';
 import { CallToAction } from '../models/call-to-action';
 
 @Injectable({

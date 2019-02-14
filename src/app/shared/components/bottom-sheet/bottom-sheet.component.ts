@@ -5,14 +5,14 @@ import { MatBottomSheetRef } from '@angular/material';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { SettingsService } from '../../../core/services/settings.service';
-import { User } from '../../models/user';
+import { User } from '../../../user/modals/user';
+import { UserService } from '../../../user/services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-bottom-sheet',
-  templateUrl: './bottom-sheet.component.html',
-  styleUrls: ['./bottom-sheet.component.css']
+    selector: 'app-bottom-sheet',
+    templateUrl: './bottom-sheet.component.html',
+    styleUrls: ['./bottom-sheet.component.css']
 })
 export class BottomSheetComponent implements OnInit {
     uid: string;
