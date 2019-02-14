@@ -9,13 +9,14 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 
 // Inits the app (Fixes a bug).
 firebase.initializeApp(environment.firebase);
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserAnimationsModule,
@@ -24,8 +25,11 @@ firebase.initializeApp(environment.firebase);
         AngularFirestoreModule,
         AngularFireAuthModule,
         AngularFireStorageModule,
+        SharedModule,
     ],
     providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
-    bootstrap: [AppComponent]
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule {}

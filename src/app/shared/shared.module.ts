@@ -11,11 +11,13 @@ import {
     MatMenuModule,
     MatSelectModule,
     MatSidenavModule,
-    MatSnackBar, MatSnackBarModule,
+    MatSnackBarModule,
     MatTooltipModule
 } from '@angular/material';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BsDatepickerModule, PopoverModule, ProgressbarModule, TabsModule, TimepickerModule } from 'ngx-bootstrap';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 import { LogoWatermarkComponent } from './components/logo-watermark/logo-watermark.component';
 import { MobileFooternavComponent } from './components/mobile-footernav/mobile-footernav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -37,15 +39,19 @@ import { SharedRoutingModule } from './shared-routing.module';
         RunScriptsDirective,
         DropZoneDirective,
         SafeHtmlPipe,
+        BottomSheetComponent,
     ],
     imports: [
         CommonModule,
         SharedRoutingModule,
+        BsDatepickerModule.forRoot(),
+        FlashMessagesModule.forRoot(),
+        PopoverModule.forRoot(),
+        ProgressbarModule.forRoot(),
         MatSidenavModule,
         MatButtonModule,
         MatMenuModule,
         ProgressbarModule,
-        BsDatepickerModule.forRoot(),
         PopoverModule,
         TabsModule,
         TimepickerModule,

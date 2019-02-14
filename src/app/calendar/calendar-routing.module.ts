@@ -8,7 +8,8 @@ import { CalendarComponent } from './components/calendar.component';
 
 const calendarRoutes: Routes = [
     {
-        path: 'calendar', component: CalendarComponent, children: [
+        path: 'calendar', component: CalendarComponent,
+        children: [
             { path: '', component: CalendarListComponent },
             { path: 'new', component: CalendarNewComponent },
             { path: ':id/edit', component: CalendarEditComponent },

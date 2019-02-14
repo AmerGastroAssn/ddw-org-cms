@@ -1,10 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BottomSheetComponent } from '../shared/components/bottom-sheet/bottom-sheet.component';
 import { AdsComponent } from './components/ads/ads.component';
 import { AnalyticsDashboardComponent } from './components/analytics-dashboard/analytics-dashboard.component';
-import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
-import { FilesComponent } from './components/files/files.component';
-import { ImagesComponent } from './components/images/images.component';
 import { LoginComponent } from './components/login/login.component';
 import { MetaComponent } from './components/meta/meta.component';
 import { ModalComponent } from './components/modal/modal.component';
@@ -27,8 +25,8 @@ import { SettingsService } from './services/settings.service';
         AdsComponent,
         BottomSheetComponent,
         AnalyticsDashboardComponent,
-        FilesComponent,
-        ImagesComponent,
+        // FilesComponent,
+        // ImagesComponent,
         LoginComponent,
         MetaComponent,
         PrivacyPolicyComponent,
