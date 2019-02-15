@@ -13,7 +13,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { CoreRoutingModule } from './core-routing.module';
 import { AdsService } from './services/ads.service';
 import { FileService } from './services/file.service';
-import { ImageService } from './services/image.service';
+import { ImageService } from '../image/services/image.service';
 import { MetaService } from './services/meta.service';
 import { ModalService } from './services/modal.service';
 import { PrivacyPolicyService } from './services/privacy-policy.service';

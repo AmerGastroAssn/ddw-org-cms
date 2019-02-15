@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarModule } from './calendar/calendar.module';
 import { ContentSectionModule } from './content-section/content-section.module';
+import { ImageModule } from './image/image.module';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
         CalendarModule,
         ContentSectionModule,
         UserModule,
+        ImageModule,
     ]
 })
 export class AppRoutingModule {}

@@ -51,7 +51,7 @@ export class UserListComponent implements OnInit {
     ngOnInit() {
         this.users$ = this.userService.getUsers();
         // this.onlineDate = this.afAuth.auth.currentUser.metadata.lastSignInTime;
-        this.users$.subscribe(info => console.log(info));
+
 
         // this.authService.users$
         //     .subscribe((info) => {

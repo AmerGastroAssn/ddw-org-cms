@@ -30,7 +30,6 @@ import { UserRoutingModule } from './user-routing.module';
         UserDetailsComponent,
         UserEditComponent,
         UserHomeComponent,
-
     ],
     providers: [
         UserService,

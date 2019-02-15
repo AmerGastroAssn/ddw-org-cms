@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Observable } from 'rxjs/Observable';
 import { finalize } from 'rxjs/operators';
-import { ImageService } from '../../../core/services/image.service';
+import { ImageService } from '../../../image/services/image.service';
 import { SettingsService } from '../../../core/services/settings.service';
 import { User } from '../../modals/user';
 import { UserService } from '../../services/user.service';

@@ -4,7 +4,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ImageService } from '../../../../core/services/image.service';
+import { ImageService } from '../../../../image/services/image.service';
 import { AuthService } from '../../../../shared/services/auth.service';
 import { User } from '../../../../user/modals/user';
 import { CallToActionService } from '../../../services/call-to-action.service';
