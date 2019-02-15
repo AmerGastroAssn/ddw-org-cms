@@ -18,7 +18,7 @@
                 <div class="card image-uploader">
                     <div class="card-body">
                         <p class="card-title">
-                            Image Uploader
+                            File Uploader
                         </p>
                         <div class="row">
                             <div class="col-sm-6">
@@ -39,7 +39,7 @@
                             <div class="col-sm-6">
                                 <div *ngIf="downloadURL | async as url; else loadingURL">
                                     <p class="pb-2">
-                                        <b>Copy and paste url into the Image URL input below:</b>
+                                        <b>Copy and paste url into the File URL input below:</b>
                                     </p>
                                     <p>
                                         <a [href]="url">
@@ -50,8 +50,8 @@
                                 </div>
                                 <ng-template #loadingURL>
                                     <p class="text-center text-light">
-                                        Upload Image, Then a URL will appear here. Copy and paste that link
-                                        into Image URL below to use.
+                                        Upload File, Then a URL will appear here. Copy and paste that link
+                                        into File URL below to use.
                                     </p>
                                 </ng-template>
                             </div>
@@ -113,8 +113,8 @@
 
 
                         <div class="form-group">
-                            <label>Image <br>
-                                <small>Use the Image Uploader to get string and replace the default here</small>
+                            <label>File <br>
+                                <small>Use the File Uploader to get string and replace the default here</small>
                             </label>
                             <input type="text"
                                    class="form-control"
