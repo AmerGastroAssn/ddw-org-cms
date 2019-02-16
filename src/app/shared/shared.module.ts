@@ -1,19 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import {
-    MatBottomSheetModule,
-    MatButtonModule,
-    MatCardModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatMenuModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSnackBarModule,
-    MatTooltipModule
-} from '@angular/material';
+import { MatBottomSheetModule, MatButtonModule, MatCardModule, MatDividerModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatMenuModule, MatSelectModule, MatSidenavModule, MatSnackBarModule, MatTooltipModule } from '@angular/material';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BsDatepickerModule, PopoverModule, ProgressbarModule, TabsModule, TimepickerModule } from 'ngx-bootstrap';
@@ -22,7 +9,6 @@ import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.com
 import { LogoWatermarkComponent } from './components/logo-watermark/logo-watermark.component';
 import { MobileFooternavComponent } from './components/mobile-footernav/mobile-footernav.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { RunScriptsDirective } from './directives/run-scripts.directive';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
@@ -34,7 +20,6 @@ import { SharedRoutingModule } from './shared-routing.module';
     declarations: [
         MobileFooternavComponent,
         NavbarComponent,
-        SidenavComponent,
         LogoWatermarkComponent,
         RunScriptsDirective,
         DropZoneDirective,
@@ -69,7 +54,6 @@ import { SharedRoutingModule } from './shared-routing.module';
     exports: [
         MobileFooternavComponent,
         NavbarComponent,
-        SidenavComponent,
         LogoWatermarkComponent,
         RunScriptsDirective,
         DropZoneDirective,

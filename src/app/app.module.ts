@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SidenavComponent } from './core/components/sidenav/sidenav.component';
 import { SharedModule } from './shared/shared.module';
 
 // Inits the app (Fixes a bug).
@@ -17,6 +18,7 @@ firebase.initializeApp(environment.firebase);
 @NgModule({
     declarations: [
         AppComponent,
+        SidenavComponent,
     ],
     imports: [
         BrowserAnimationsModule,
