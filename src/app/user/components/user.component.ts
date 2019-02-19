@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
                                 this.isAdmin = true;
                             } else {
                                 this.isAdmin = false;
-                                console.log(this.isAdmin);
+                                // console.log(this.isAdmin);
                             }
                         }
                     }

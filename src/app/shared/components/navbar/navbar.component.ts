@@ -59,7 +59,6 @@ export class NavbarComponent implements OnInit {
 
     openBottomSheet(): void {
         this.bottomSheet.open(BottomSheetComponent);
-        console.log('clicked AdminBottomSheetNewComponent');
     }
 
     ngOnInit() {
