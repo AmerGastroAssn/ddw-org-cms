@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { AuthService } from './shared/services/auth.service';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
     selector: 'app-root',

@@ -4,10 +4,10 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { MatBottomSheetRef } from '@angular/material';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { AuthService } from '../../../auth/services/auth.service';
 import { SettingsService } from '../../../core/services/settings.service';
 import { User } from '../../../user/modals/user';
 import { UserService } from '../../../user/services/user.service';
-import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-bottom-sheet',

@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { AuthService } from '../../../shared/services/auth.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { User } from '../../../user/modals/user';
 import { UserService } from '../../../user/services/user.service';
 import { SettingsService } from '../../services/settings.service';

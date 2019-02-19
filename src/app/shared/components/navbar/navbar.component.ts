@@ -5,10 +5,10 @@ import { MatBottomSheet } from '@angular/material';
 import { Observable, of } from 'rxjs';
 import 'rxjs/add/operator/take';
 import { switchMap } from 'rxjs/operators';
+import { AuthService } from '../../../auth/services/auth.service';
 import { SettingsService } from '../../../core/services/settings.service';
 import { User } from '../../../user/modals/user';
 import { UserService } from '../../../user/services/user.service';
-import { AuthService } from '../../services/auth.service';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 
 @Component({

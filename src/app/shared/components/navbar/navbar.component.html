@@ -47,13 +47,13 @@
             </li>
             <li class="nav-item" *ngIf="!isLoggedIn && allowSignup && isAdmin">
                 <a class="nav-link"
-                   [routerLink]="['/signup']">
+                   [routerLink]="['/auth/signup']">
                     <i class="fa fa-user-plus"></i>&nbsp;<span class="helv">Create Account</span>
                 </a>
             </li>
             <li class="nav-item" *ngIf="!isLoggedIn">
                 <a class="nav-link"
-                   [routerLink]="['/login']">
+                   [routerLink]="['/auth/login']">
                     <i class="fa fa-sign-in-alt"></i>&nbsp;<span class="helv">log In</span>
                 </a>
             </li>

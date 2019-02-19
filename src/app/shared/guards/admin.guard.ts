@@ -4,9 +4,9 @@ import { MatSnackBar } from '@angular/material';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../auth/services/auth.service';
 import { User } from '../../user/modals/user';
 import { UserService } from '../../user/services/user.service';
-import { AuthService } from '../services/auth.service';
 
 @Injectable({
     providedIn: 'root'

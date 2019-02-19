@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthModule } from './auth/auth.module';
 import { CalendarModule } from './calendar/calendar.module';
 import { ContentSectionModule } from './content-section/content-section.module';
 import { FileModule } from './file/file.module';
@@ -23,6 +24,7 @@ const routes: Routes = [
         UserModule,
         ImageModule,
         FileModule,
+        AuthModule,
     ]
 })
 export class AppRoutingModule {}

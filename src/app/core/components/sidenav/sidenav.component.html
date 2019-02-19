@@ -1,7 +1,7 @@
 <!-- Brand demo (see assets/css/demo/demo.css) -->
 <div class="app-brand demo pt-4 pb-3">
               <span class="app-brand-logo demo">
-              <a [routerLink]="['/admin/dashboard']">
+              <a [routerLink]="['/dashboard']">
                       <img src="https://s3.amazonaws.com/DDW/ddw-org/images/logos/gray-ddw-150.png"
                            alt="ddw logo" class="ddw-logo img-fluid p-1">
               </a>
@@ -32,48 +32,47 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/pages']" class="sidenav-link">
+                <a [routerLink]="['/pages']" class="sidenav-link">
                     <div><i class="fal fa-layer-group"></i>&nbsp;<span class="helv">All Pages</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/register']" class="sidenav-link">
+                <a [routerLink]="['/pages/register']" class="sidenav-link">
                     <div><i class="fal fa-pen-nib"></i>&nbsp;<span class="helv">Register</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/attendee-planning']" class="sidenav-link">
+                <a [routerLink]="['/pages/attendee-planning']" class="sidenav-link">
                     <div><i class="fal fa-book-reader"></i>&nbsp;<span class="helv">Attendee Planning</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/education']" class="sidenav-link">
+                <a [routerLink]="['/pages/education']" class="sidenav-link">
                     <div><i class="fal fa-graduation-cap"></i>&nbsp;<span class="helv">Education</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/exhibitor-information']" class="sidenav-link">
+                <a [routerLink]="['/pages/exhibitor-information']" class="sidenav-link">
                     <div><i class="fal fa-info"></i>&nbsp;<span class="helv">Exhibitor Info</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/news']" class="sidenav-link">
+                <a [routerLink]="['/pages/news']" class="sidenav-link">
                     <div><i class="fal fa-newspaper"></i>&nbsp;<span class="helv">News & Media</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/presenters']" class="sidenav-link">
+                <a [routerLink]="['/pages/presenters']" class="sidenav-link">
                     <div><i class="fal fa-mouse-pointer"></i>&nbsp;<span class="helv">Presenters</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/pages/new']" class="sidenav-link">
+                <a [routerLink]="['/pages/new']" class="sidenav-link">
                     <div><i class="fal fa-layer-plus"></i>&nbsp;<span class="helv">New Page</span></div>
                 </a>
             </li>
         </ul>
     </li>
-
 
 
     <!-- * Content Sections * -->
@@ -87,12 +86,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/text-section']" class="sidenav-link">
+                <a [routerLink]="['/text-section']" class="sidenav-link">
                     <div><i class="fal fa-align-justify"></i>&nbsp;<span class="helv">Text Sections</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/call-to-action']" class="sidenav-link">
+                <a [routerLink]="['/call-to-action']" class="sidenav-link">
                     <div><i class="fal fa-text-width"></i>&nbsp;<span class="helv">CTA's Sections</span></div>
                 </a>
             </li>
@@ -111,12 +110,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/press-releases']" class="sidenav-link">
+                <a [routerLink]="['/press-releases']" class="sidenav-link">
                     <div><i class="fal fa-newspaper"></i>&nbsp;<span class="helv">All PR</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/press-releases/new']" class="sidenav-link">
+                <a [routerLink]="['/press-releases/new']" class="sidenav-link">
                     <div><i class="fal fa-newspaper"></i>&nbsp;<span class="helv">New PR</span></div>
                 </a>
             </li>
@@ -134,12 +133,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/calendar']" class="sidenav-link">
+                <a [routerLink]="['/calendar']" class="sidenav-link">
                     <div><i class="fal fa-calendar-check"></i>&nbsp;<span class="helv">All Calendars</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/calendar/new']" class="sidenav-link">
+                <a [routerLink]="['/calendar/new']" class="sidenav-link">
                     <div><i class="fal fa-calendar-plus"></i>&nbsp;<span class="helv">New Calendar</span></div>
                 </a>
             </li>
@@ -158,12 +157,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/page-cards']" class="sidenav-link">
+                <a [routerLink]="['/page-cards']" class="sidenav-link">
                     <div><i class="fal fa-window-restore"></i>&nbsp;<span class="helv">All Cards</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/page-cards/new']" class="sidenav-link">
+                <a [routerLink]="['/page-cards/new']" class="sidenav-link">
                     <div><i class="fal fa-window-restore"></i>&nbsp;<span class="helv">New Card</span></div>
                 </a>
             </li>
@@ -172,7 +171,7 @@
 
     <!-- * Home Page * -->
     <li class="sidenav-item" *ngIf="isLoggedIn">
-        <a [routerLink]="['/admin/home']" class="sidenav-link">
+        <a [routerLink]="['/home']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-home"></i>&nbsp;<span class="helv">Home Page</span></div>
         </a>
@@ -180,7 +179,7 @@
 
     <!-- * Contacts * -->
     <li class="sidenav-item" *ngIf="isLoggedIn">
-        <a [routerLink]="['/admin/contacts']" class="sidenav-link">
+        <a [routerLink]="['/contacts']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-address-book"></i>&nbsp;<span class="helv">Contacts</span></div>
         </a>
@@ -188,7 +187,7 @@
 
     <!-- * Custom Links * -->
     <li class="sidenav-item" *ngIf="isLoggedIn">
-        <a [routerLink]="['/admin/custom-nav-links']" class="sidenav-link">
+        <a [routerLink]="['/custom-nav-links']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-link"></i>&nbsp;<span class="helv">Navbar Links</span></div>
         </a>
@@ -196,7 +195,7 @@
 
     <!-- * Cards * -->
     <!--<li class="sidenav-item" *ngIf="isLoggedIn">-->
-    <!--<a [routerLink]="['/admin/cards']" class="sidenav-link">-->
+    <!--<a [routerLink]="['/cards']" class="sidenav-link">-->
     <!--<i class="sidenav-icon ion ion-md-quote"></i>-->
     <!--<div><i class="fal fa-passport"></i>&nbsp;Cards</div>-->
     <!--</a>-->
@@ -204,7 +203,7 @@
 
     <!-- * Featured Posts * -->
     <!--<li class="sidenav-item" *ngIf="isLoggedIn">-->
-    <!--<a [routerLink]="['/admin/featured-posts']" class="sidenav-link">-->
+    <!--<a [routerLink]="['/featured-posts']" class="sidenav-link">-->
     <!--<i class="sidenav-icon ion ion-md-quote"></i>-->
     <!--<div><i class="fal fa-passport"></i>&nbsp;Featured Posts</div>-->
     <!--</a>-->
@@ -222,12 +221,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/users']" class="sidenav-link">
+                <a [routerLink]="['/users']" class="sidenav-link">
                     <div><i class="fal fa-users"></i>&nbsp;<span class="helv">All Users</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item" *ngIf="isAdmin">
-                <a [routerLink]="['/admin/users/new']" class="sidenav-link">
+                <a [routerLink]="['/users/new']" class="sidenav-link">
                     <div><i class="fal fa-user-plus"></i>&nbsp;<span class="helv">New User</span></div>
                 </a>
             </li>
@@ -241,7 +240,7 @@
     <li class="sidenav-header small font-weight-semibold"><span class="helv">Extras</span></li>
 
     <li class="sidenav-item" *ngIf="isLoggedIn && isAdmin">
-        <a [routerLink]="['/admin/settings']" class="sidenav-link">
+        <a [routerLink]="['/settings']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-wrench"></i>&nbsp;<span class="helv">Settings</span></div>
         </a>
@@ -258,12 +257,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/images']" class="sidenav-link">
+                <a [routerLink]="['/images']" class="sidenav-link">
                     <div><i class="fal fa-grip-horizontal"></i>&nbsp;<span class="helv">Image Gallery</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/image-uploader']" class="sidenav-link">
+                <a [routerLink]="['/image-uploader']" class="sidenav-link">
                     <div><i class="fal fa-cloud-upload-alt"></i>&nbsp;<span class="helv">Upload Image</span></div>
                 </a>
             </li>
@@ -282,12 +281,12 @@
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/files']" class="sidenav-link">
+                <a [routerLink]="['/files']" class="sidenav-link">
                     <div><i class="fal fa-th"></i>&nbsp;<span class="helv">File Gallery</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/admin/file-uploader']" class="sidenav-link">
+                <a [routerLink]="['/file-uploader']" class="sidenav-link">
                     <div><i class="fal fa-cloud-upload"></i>&nbsp;<span class="helv">Upload File</span></div>
                 </a>
             </li>
@@ -295,42 +294,42 @@
     </li>
 
     <li class="sidenav-item" *ngIf="isLoggedIn">
-        <a [routerLink]="['/admin/dashboard']" class="sidenav-link">
+        <a [routerLink]="['/dashboard']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-chart-pie"></i>&nbsp;<span class="helv">Analytics</span></div>
         </a>
     </li>
 
     <li class="sidenav-item" *ngIf="isLoggedIn && isAdmin">
-        <a [routerLink]="['/admin/meta']" class="sidenav-link">
+        <a [routerLink]="['/meta']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-chart-line"></i>&nbsp;<span class="helv">Meta</span></div>
         </a>
     </li>
 
     <li class="sidenav-item" *ngIf="isLoggedIn && isAdmin">
-        <a [routerLink]="['/admin/ads']" class="sidenav-link">
+        <a [routerLink]="['/ads']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-money-bill-wave"></i>&nbsp;<span class="helv">Advertising</span></div>
         </a>
     </li>
 
     <li class="sidenav-item" *ngIf="isLoggedIn">
-        <a [routerLink]="['/admin/privacy-policy']" class="sidenav-link">
+        <a [routerLink]="['/privacy-policy']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-file-signature"></i>&nbsp;<span class="helv">Privacy Policy</span></div>
         </a>
     </li>
 
     <li class="sidenav-item" *ngIf="isLoggedIn">
-        <a [routerLink]="['/admin/modal']" class="sidenav-link">
+        <a [routerLink]="['/modal']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-window-alt"></i>&nbsp;<span class="helv">Homepage Modal</span></div>
         </a>
     </li>
 
     <li class="sidenav-item">
-        <a class="sidenav-link" [routerLink]="['/']" target="_blank">
+        <a class="sidenav-link" href="https://ddw.org" target="_blank">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-laptop"></i>&nbsp;<span class="helv">Live Site</span></div>
         </a>
@@ -347,7 +346,7 @@
     </li>
 
     <li class="sidenav-item" *ngIf="!isLoggedIn">
-        <a [routerLink]="['/admin/login']" class="sidenav-link">
+        <a [routerLink]="['/auth/login']" class="sidenav-link">
             <i class="sidenav-icon ion ion-md-quote"></i>
             <div><i class="fal fa-sign-in-alt"></i>&nbsp;<span class="helv">Log In</span></div>
         </a>

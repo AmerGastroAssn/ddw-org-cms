@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../shared/services/auth.service';
+import { AuthService } from '../../auth/services/auth.service';
 import { User } from '../modals/user';
 import { UserService } from '../services/user.service';
 

@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../../shared/services/auth.service';
+import { AuthService } from '../../auth/services/auth.service';
 import { User } from '../../user/modals/user';
 import { CallToAction } from '../models/call-to-action';
 

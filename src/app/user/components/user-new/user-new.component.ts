@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { AuthService } from '../../../auth/services/auth.service';
 import { SettingsService } from '../../../core/services/settings.service';
-import { AuthService } from '../../../shared/services/auth.service';
 import { User } from '../../modals/user';
 import { UserService } from '../../services/user.service';
 
@@ -27,12 +27,12 @@ export class UserNewComponent implements OnInit {
 
 
     constructor(
-      private userService: UserService,
-      private flashMessage: FlashMessagesService,
-      private fb: FormBuilder,
-      private settingsService: SettingsService,
-      private authService: AuthService,
-      public sbAlert: MatSnackBar,
+        private userService: UserService,
+        private flashMessage: FlashMessagesService,
+        private fb: FormBuilder,
+        private settingsService: SettingsService,
+        private authService: AuthService,
+        public sbAlert: MatSnackBar,
     ) {
 
     }

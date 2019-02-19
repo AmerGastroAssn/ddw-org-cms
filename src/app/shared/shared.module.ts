@@ -4,6 +4,7 @@ import { MatBottomSheetModule, MatButtonModule, MatCardModule, MatDividerModule,
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BsDatepickerModule, PopoverModule, ProgressbarModule, TabsModule, TimepickerModule } from 'ngx-bootstrap';
+import { AuthService } from '../auth/services/auth.service';
 import { UserService } from '../user/services/user.service';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 import { LogoWatermarkComponent } from './components/logo-watermark/logo-watermark.component';
@@ -12,7 +13,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DropZoneDirective } from './directives/drop-zone.directive';
 import { RunScriptsDirective } from './directives/run-scripts.directive';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
-import { AuthService } from './services/auth.service';
 
 import { SharedRoutingModule } from './shared-routing.module';
 
@@ -54,6 +54,7 @@ import { SharedRoutingModule } from './shared-routing.module';
     exports: [
         MobileFooternavComponent,
         NavbarComponent,
+        BottomSheetComponent,
         LogoWatermarkComponent,
         RunScriptsDirective,
         DropZoneDirective,
@@ -81,6 +82,9 @@ import { SharedRoutingModule } from './shared-routing.module';
     providers: [
         AuthService,
         UserService,
+    ],
+    entryComponents: [
+        BottomSheetComponent,
     ]
 })
 export class SharedModule {}
