@@ -150,10 +150,11 @@
                                     </div>
 
                                     <!-- * Cards * -->
+                                    <!-- * TODO: Add Card Pop-up previews when card section is added * -->
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <hr class="inset-hr"/>
-                                            <h5>Cards Title &amp; Subtitle</h5>
+                                            <h5>Cards</h5>
                                             <div class="form-group hide-btn">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox"
@@ -193,7 +194,56 @@
                                                           rows="3"
                                                           id="cardsSubtitle"
                                                           formControlName="cardsSubtitle">
-                                        </textarea>
+                                                </textarea>
+                                            </div>
+
+                                            <div class="form-group" *ngIf="!homePage.cardsHidden">
+                                                <label for="cardOption1">Select Card
+                                                    &nbsp;&nbsp;<i class="fa fa-align-left"></i> Left
+                                                </label>
+                                                <select class="form-control"
+                                                        id="cardOption1"
+                                                        formControlName="cardOption1">
+                                                    <option *ngFor="let card of cards$ | async"
+                                                            [value]="card.$key">
+                                                        {{ card.title }}
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group" *ngIf="!homePage.cardsHidden">
+                                                <label for="cardOption2">Select Card
+                                                    &nbsp;&nbsp;<i class="fa fa-align-center"></i>
+                                                    Middle
+                                                </label>
+                                                <select class="form-control"
+                                                        id="cardOption2"
+                                                        formControlName="cardOption2">
+                                                    <option *ngFor="let card of cards$ | async"
+                                                            [value]="card.$key">
+                                                        {{ card.title }}
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group" *ngIf="!homePage.cardsHidden">
+                                                <label for="cardOption3">Select Card
+                                                    &nbsp;&nbsp;<i class="fa fa-align-right"></i>
+                                                    Right
+                                                </label>
+                                                <select class="form-control"
+                                                        id="cardOption3"
+                                                        formControlName="cardOption3">
+                                                    <option *ngFor="let card of cards$ | async"
+                                                            [value]="card.$key">
+                                                        {{ card.title }}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <a [routerLink]="['/cards']" class="btn btn-default">
+                                                    <i class="fa fa-pencil-alt"></i>&nbsp;Edit Cards
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -572,6 +622,7 @@
                                             </div>
                                         </div>
                                     </div>
+
 
                                     <!-- * Calendar * -->
                                     <div class="row">

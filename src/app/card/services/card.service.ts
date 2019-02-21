@@ -34,7 +34,7 @@ export class CardService {
         });
     }
 
-    getAllPageCards(): Observable<Card[]> {
+    getAllCards(): Observable<Card[]> {
         this.pageCardCollection = this.afs.collection<Card>('pageCards', (ref) => {
             return ref.orderBy('title', 'asc');
         });

@@ -6,6 +6,8 @@ import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { Observable } from 'rxjs';
 import { Calendar } from '../../../calendar/models/Calendar';
 import { CalendarService } from '../../../calendar/services/calendar.service';
+import { Card } from '../../../card/models/card';
+import { CardService } from '../../../card/services/card.service';
 import { Countdown } from '../../models/countdown';
 import { DailyVideo } from '../../models/daily-video';
 import { Homepage } from '../../models/homepage';
@@ -78,6 +80,10 @@ export class HomepageEditComponent implements OnInit {
     bannerButtonURL: string;
     hasBannerButton: boolean;
     bannerButtonIsExtUrl: boolean;
+    cards$: Observable<Card[]>;
+    cardOption1: string;
+    cardOption2: string;
+    cardOption3: string;
 
     CkeditorConfig = {
         allowedContent: true,
@@ -91,7 +97,8 @@ export class HomepageEditComponent implements OnInit {
         private fb: FormBuilder,
         private countdownService: CountdownService,
         private homepageService: HomepageService,
-        private calendarService: CalendarService
+        private calendarService: CalendarService,
+        private cardService: CardService,
     ) {
         // Get Countdown
         this.countdownService.getCountdownDetails().subscribe((countdown: Countdown) => {
@@ -182,6 +189,9 @@ export class HomepageEditComponent implements OnInit {
                     bannerButtonURL: [this.homePage.bannerButtonURL],
                     hasBannerButton: [this.homePage.hasBannerButton],
                     bannerButtonIsExtUrl: [this.homePage.bannerButtonIsExtUrl],
+                    cardOption1: [this.homePage.cardOption1],
+                    cardOption2: [this.homePage.cardOption2],
+                    cardOption3: [this.homePage.cardOption3],
                 });
 
                 this.id = this.homePageForm.value.id;
@@ -231,12 +241,16 @@ export class HomepageEditComponent implements OnInit {
                 this.bannerButtonURL = this.homePageForm.value.bannerButtonURL;
                 this.hasBannerButton = this.homePageForm.value.hasBannerButton;
                 this.bannerButtonIsExtUrl = this.homePageForm.value.bannerButtonIsExtUrl;
+                this.cardOption1 = this.homePageForm.value.cardOption1;
+                this.cardOption2 = this.homePageForm.value.cardOption2;
+                this.cardOption3 = this.homePageForm.value.cardOption3;
             }
         });
     }
 
     ngOnInit() {
         this.calendars$ = this.calendarService.getAllCalendars();
+        this.cards$ = this.cardService.getAllCards();
     }
 
 

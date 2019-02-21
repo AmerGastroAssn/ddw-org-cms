@@ -78,7 +78,7 @@ export class HomepageService {
     }
 
 
-    updateHomeForm(formData): void {
+    updateHomeForm(formData: Homepage): void {
         this.homeDoc = this.afs.doc<Homepage>(`homePage/${this.id}`);
 
         this.homeDoc.update(formData)

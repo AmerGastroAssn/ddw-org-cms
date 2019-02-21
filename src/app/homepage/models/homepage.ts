@@ -5,9 +5,6 @@ export class Homepage {
         public forTime: string,
         public subheaderLoc: string,
         public subheaderDate: string,
-        public cardsTitle: string,
-        public cardsSubtitle: string,
-        public cardsHidden: boolean,
         public videoTitle: string,
         public videoSubtitle: string,
         public videoHidden: boolean,
@@ -46,6 +43,12 @@ export class Homepage {
         public bannerButtonURL: string,
         public hasBannerButton: boolean,
         public bannerButtonIsExtUrl: boolean,
+        public cardOption1: string,
+        public cardOption2: string,
+        public cardOption3: string,
+        public cardsTitle: string,
+        public cardsSubtitle: string,
+        public cardsHidden: boolean,
         public id: string,
     ) {
     }
