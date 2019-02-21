@@ -7,7 +7,7 @@
 }
 
 .card {
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     font-size: 14px;
     line-height: 1.5;
 }
@@ -60,7 +60,7 @@ button.btn.search {
 }
 
 .tip {
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     font-size: 12px;
     line-height: 1.5;
 }
@@ -86,7 +86,7 @@ p > span > i.fa-file-word {
 }
 
 p.file-name {
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     font-size: 10px;
     line-height: 1.3;
 }

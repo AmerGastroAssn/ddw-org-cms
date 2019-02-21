@@ -37,7 +37,7 @@ a:link, a:link:active {
 }
 
 h4, p, li {
-    font-family: 'Open Sans', Roboto, 'Helvetica Neue', sans-serif;
+    font-family: var(--frontend-font);
 }
 
 #calTab {

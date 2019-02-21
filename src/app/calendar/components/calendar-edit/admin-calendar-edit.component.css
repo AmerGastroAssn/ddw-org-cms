@@ -4,7 +4,7 @@ label {
 }
 
 p {
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     font-size: 14px;
     line-height: 1.5;
 }

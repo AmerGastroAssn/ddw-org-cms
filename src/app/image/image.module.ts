@@ -30,6 +30,7 @@ import { ImageService } from './services/image.service';
         ImageService
     ],
     exports: [
+        ImageUploaderComponent,
         ImageUploaderItemComponent,
     ]
 })

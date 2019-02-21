@@ -1,11 +1,11 @@
 table, tr, th, td {
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     font-size: 14px !important;
 }
 
 th {
     font-size: 14px !important;
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     line-height: 1.5;
 }
 
@@ -23,7 +23,7 @@ img.page-image {
 
 a.page-link {
     font-size: 14px !important;
-    font-family: 'Helvetica Neue', Roboto, Arial, sans-serif !important;
+    font-family: var(--cms-font) !important;
     text-decoration: none;
 }
 

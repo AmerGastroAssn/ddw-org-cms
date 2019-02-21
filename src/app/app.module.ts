@@ -10,6 +10,8 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './core/components/sidenav/sidenav.component';
+import { ImageUploaderItemComponent } from './image/components/image-uploader/image-uploader-item/image-uploader-item.component';
+import { ImageModule } from './image/image.module';
 import { SharedModule } from './shared/shared.module';
 
 // Inits the app (Fixes a bug).
@@ -28,10 +30,14 @@ firebase.initializeApp(environment.firebase);
         AngularFireAuthModule,
         AngularFireStorageModule,
         SharedModule,
+
     ],
     providers: [{ provide: FirestoreSettingsToken, useValue: {} }],
     bootstrap: [
         AppComponent
+    ],
+    exports: [
+
     ]
 })
 export class AppModule {}

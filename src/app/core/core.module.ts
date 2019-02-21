@@ -22,8 +22,6 @@ import { SettingsService } from './services/settings.service';
         AdsComponent,
         BottomSheetComponent,
         AnalyticsDashboardComponent,
-        // FilesComponent,
-        // ImagesComponent,
         MetaComponent,
         PrivacyPolicyComponent,
         SettingsComponent,
