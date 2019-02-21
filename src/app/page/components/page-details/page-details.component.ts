@@ -279,5 +279,4 @@ export class PageDetailsComponent implements OnInit, AfterContentInit {
         this.pageService.deletePage(this.page.uid);
     }
 
-
 }

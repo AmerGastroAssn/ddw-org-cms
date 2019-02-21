@@ -12,7 +12,6 @@ import { PageDetailsComponent } from './components/page-details/page-details.com
 import { PageEditComponent } from './components/page-edit/page-edit.component';
 import { PageEducationListComponent } from './components/page-education-list/page-education-list.component';
 import { PageExhibitorInformationListComponent } from './components/page-exhibitor-information-list/page-exhibitor-information-list.component';
-import { PageHomeComponent } from './components/page-home/page-home.component';
 import { PageItemComponent } from './components/page-item/page-item.component';
 import { PageListComponent } from './components/page-list/page-list.component';
 import { PageNewComponent } from './components/page-new/page-new.component';
@@ -29,7 +28,6 @@ import { PageRoutingModule } from './page-routing.module';
         PageNewComponent,
         PageListComponent,
         PageItemComponent,
-        PageHomeComponent,
         PageEditComponent,
         PageDetailsComponent,
         PageRegisterListComponent,

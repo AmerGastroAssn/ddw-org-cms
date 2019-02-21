@@ -5,6 +5,7 @@ import { CalendarModule } from './calendar/calendar.module';
 import { CardModule } from './card/card.module';
 import { ContentSectionModule } from './content-section/content-section.module';
 import { FileModule } from './file/file.module';
+import { HomepageModule } from './homepage/homepage.module';
 import { ImageModule } from './image/image.module';
 import { PageModule } from './page/page.module';
 import { UserModule } from './user/user.module';
@@ -29,6 +30,7 @@ const routes: Routes = [
         AuthModule,
         CardModule,
         PageModule,
+        HomepageModule,
     ]
 })
 export class AppRoutingModule {}
