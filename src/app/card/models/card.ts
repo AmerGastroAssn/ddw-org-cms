@@ -1,6 +1,5 @@
 export class Card {
     constructor(
-        public $key: string,
         public id: string,
         public orderNumber: number,
         public title: string,
@@ -11,6 +10,7 @@ export class Card {
         public updatedAt: any,
         public author: string,
         public isExtURL: boolean,
+        public $key?: string,
     ) {
     }
 }

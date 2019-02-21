@@ -41,7 +41,7 @@ export class CardService {
         return this.pageCardCollection.valueChanges();
     }
 
-    getPageCardByTitle(title: string): Observable<Card[]> {
+    getCardsByTitle(title: string): Observable<Card[]> {
         this.pageCardCollection = this.afs.collection<Card>('pageCards', ref => {
             return ref.where('title', '==', `${title}`);
         });
@@ -63,9 +63,8 @@ export class CardService {
     }
 
 
-    updatePageCard(formData, id): object {
+    updatePageCard(formData, id): void {
         const cardRef: AngularFirestoreDocument<Card> = this.afs.doc(`pageCards/${id}`);
-
         const data: Card = {
             $key: id,
             orderNumber: formData.orderNumber,
@@ -74,39 +73,44 @@ export class CardService {
             photoURL: formData.photoURL,
             buttonString: formData.buttonString,
             url: formData.url,
-            uid: id,
+            id: id,
             updatedAt: Date.now(),
             author: this.loggedInUser,
             isExtURL: formData.isExtURL
         };
 
-        console.log('data', data);
-        return cardRef.set(data, { merge: true })
-                      .then(() => {
-                          this.router.navigate(['/admin/page-cards']);
-                          this.sbAlert.open('Page Card Updated!', 'Dismiss', {
-                              duration: 3000,
-                              verticalPosition: 'bottom',
-                              panelClass: ['snackbar-success']
-                          });
-                          console.log('Page Card Updated', data);
-                      })
-                      .catch((error) => console.log(`ERROR~uPC: `, error));
+        cardRef.set(data, { merge: true })
+               .then(() => {
+                   this.router.navigate(['/cards']);
+                   this.sbAlert.open('Page Card Updated!', 'Dismiss', {
+                       duration: 3000,
+                       verticalPosition: 'bottom',
+                       panelClass: ['snackbar-success']
+                   });
+               })
+               .catch((error) => {
+                   this.sbAlert.open(error, 'Dismiss', {
+                       duration: 3000,
+                       verticalPosition: 'bottom',
+                       panelClass: ['snackbar-danger']
+                   });
+                   console.error(`ERROR~uPC: `, error);
+               });
     }
 
     setPageCard(formData): Promise<void> {
-        const new$key = this.afs.createId();
-        const calRef: AngularFirestoreDocument<Card> = this.afs.doc(`pageCards/${new$key}`);
+        const newId = this.afs.createId();
+        const calRef: AngularFirestoreDocument<Card> = this.afs.doc(`pageCards/${newId}`);
 
         const data: Card = {
-            $key: new$key,
+            $key: newId,
             orderNumber: formData.orderNumber,
             title: formData.title,
             body: formData.body,
             photoURL: formData.photoURL,
             buttonString: formData.buttonString,
             url: formData.url,
-            uid: new$key,
+            id: newId,
             updatedAt: Date.now(),
             author: this.loggedInUser,
             isExtURL: formData.isExtURL
@@ -115,7 +119,7 @@ export class CardService {
         console.log('data', data);
         return calRef.set(data)
                      .then(() => {
-                         this.router.navigate(['/admin/page-cards']);
+                         this.router.navigate(['/cards']);
                          this.sbAlert.open('Page Card Created!', 'Dismiss', {
                              duration: 3000,
                              verticalPosition: 'bottom',
@@ -136,7 +140,7 @@ export class CardService {
                         verticalPosition: 'bottom',
                         panelClass: ['snackbar-success']
                     });
-                    this.router.navigate([`/admin/page-cards`]);
+                    this.router.navigate([`/cards`]);
                 })
                 .catch((error) => {
                     this.sbAlert.open('Something went wrong, Card not Deleted', 'Dismiss', {

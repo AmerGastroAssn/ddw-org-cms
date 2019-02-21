@@ -43,7 +43,7 @@ export class CardEditComponent implements OnInit {
     buttonString: string;
     url: string;
     orderNumber: number;
-    uid: string;
+    id: string;
     $key: string;
     isExtURL: boolean;
     // State for dropzone CSS toggling
@@ -64,7 +64,7 @@ export class CardEditComponent implements OnInit {
         private imageService: ImageService,
     ) {
         // Get id from url
-        this.uid = this.route.snapshot.params['id'];
+        this.$key = this.route.snapshot.params['id'];
     }
 
     // For Form Validations
@@ -74,7 +74,7 @@ export class CardEditComponent implements OnInit {
 
     ngOnInit() {
         // Card1 Form:
-        this.cardService.getPageCard(this.uid).subscribe((card) => {
+        this.cardService.getPageCard(this.$key).subscribe((card) => {
             this.card = card;
 
             this.editCardForm = this.fb.group({
@@ -106,9 +106,17 @@ export class CardEditComponent implements OnInit {
 
     }
 
-    onUpdatePageCard(formData) {
-        this.cardService.updatePageCard(formData, this.uid);
-        this.editCardForm.reset();
+    onUpdatePageCard(formData: Card) {
+        if (this.editCardForm.valid) {
+            this.cardService.updatePageCard(formData, this.$key);
+            this.editCardForm.reset();
+        } else {
+            this.sbAlert.open('Form Data is invalid', 'Dismiss', {
+                duration: 3000,
+                verticalPosition: 'bottom',
+                panelClass: ['snackbar-danger']
+            });
+        }
     }
 
     onDeletePageCard(id, title) {

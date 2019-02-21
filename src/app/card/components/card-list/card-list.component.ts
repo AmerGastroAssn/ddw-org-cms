@@ -37,7 +37,7 @@ export class CardListComponent implements OnInit {
 
 
     ngOnInit() {
-        this.pageCards$ = this.cardService.getAllPageCards();
+        this.pageCards$ = this.cardService.getAllCards();
     }
 
     onDeletePageCard(id: string, title: string) {

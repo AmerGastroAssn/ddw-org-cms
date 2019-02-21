@@ -16,7 +16,7 @@ import { CardService } from '../../services/card.service';
     styleUrls: ['./card-new.component.css']
 })
 export class CardNewComponent implements OnInit {
-    newPageCardForm: FormGroup;
+    newCardForm: FormGroup;
     photoURL: string;
     title: string;
     body: string;
@@ -33,6 +33,19 @@ export class CardNewComponent implements OnInit {
     isInvalid: boolean;
     value: any;
 
+    card: Card = {
+        id: '',
+        orderNumber: 0,
+        title: '',
+        body: '',
+        photoURL: '',
+        buttonString: '',
+        url: '',
+        updatedAt: '',
+        author: '',
+        isExtURL: false,
+    };
+
     constructor(
         private pageService: PageService,
         private router: Router,
@@ -48,12 +61,12 @@ export class CardNewComponent implements OnInit {
 
     // For Form Validations
     get f() {
-        return this.newPageCardForm.controls;
+        return this.newCardForm.controls;
     }
 
 
     ngOnInit() {
-        this.newPageCardForm = this.fb.group({
+        this.newCardForm = this.fb.group({
             orderNumber: [this.orderNumber || ''],
             title: [this.title,
                     Validators.compose([
@@ -71,18 +84,18 @@ export class CardNewComponent implements OnInit {
             isExtURL: [this.isExtURL || false],
         });
 
-        this.orderNumber = this.newPageCardForm.value.orderNumber;
-        this.title = this.newPageCardForm.value.title;
-        this.body = this.newPageCardForm.value.body;
-        this.photoURL = this.newPageCardForm.value.photoURL;
-        this.buttonString = this.newPageCardForm.value.buttonString;
-        this.url = this.newPageCardForm.value.url;
-        this.isExtURL = this.newPageCardForm.value.isExtURL;
+        this.orderNumber = this.newCardForm.value.orderNumber;
+        this.title = this.newCardForm.value.title;
+        this.body = this.newCardForm.value.body;
+        this.photoURL = this.newCardForm.value.photoURL;
+        this.buttonString = this.newCardForm.value.buttonString;
+        this.url = this.newCardForm.value.url;
+        this.isExtURL = this.newCardForm.value.isExtURL;
 
     }
 
     onCreateCard(formData: Card) {
-        if (!this.newPageCardForm.valid) {
+        if (!this.newCardForm.valid) {
             this.sbAlert.open('Form not valid', 'Dismiss', {
                 duration: 3000,
                 verticalPosition: 'bottom',
@@ -90,7 +103,7 @@ export class CardNewComponent implements OnInit {
             });
         } else {
             this.cardService.setPageCard(formData)
-                .then(() => this.newPageCardForm.reset())
+                .then(() => this.newCardForm.reset())
                 .catch((error) => console.log(error));
         }
 

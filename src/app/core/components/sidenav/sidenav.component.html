@@ -152,17 +152,17 @@
         *ngIf="isLoggedIn">
         <a class="sidenav-link sidenav-toggle" (click)="onShowPageCardToggle()">
             <i class="sidenav-icon ion ion-md-speedometer"></i>
-            <div><i class="fal fa-window-restore"></i>&nbsp;<span class="helv">Page Cards</span></div>
+            <div><i class="fal fa-window-restore"></i>&nbsp;<span class="helv">Cards</span></div>
         </a>
 
         <ul class="sidenav-menu">
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/page-cards']" class="sidenav-link">
+                <a [routerLink]="['/cards']" class="sidenav-link">
                     <div><i class="fal fa-window-restore"></i>&nbsp;<span class="helv">All Cards</span></div>
                 </a>
             </li>
             <li class="sidenav-item sub-item">
-                <a [routerLink]="['/page-cards/new']" class="sidenav-link">
+                <a [routerLink]="['/cards/new']" class="sidenav-link">
                     <div><i class="fal fa-window-restore"></i>&nbsp;<span class="helv">New Card</span></div>
                 </a>
             </li>

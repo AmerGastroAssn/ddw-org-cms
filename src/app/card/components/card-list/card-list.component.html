@@ -7,7 +7,7 @@
                     <img src="https://s3.amazonaws.com/DDW/ddw-org/images/logos/ddw-color.png"
                          alt="ddw logo" class="ddw-logo" style="max-width:200px;"> <br>
                     <i class="fa fa-window-restore"></i>&nbsp;Admin
-                    Page Cards
+                    Cards
                 </h1>
             </div>
         </div>
@@ -17,8 +17,8 @@
 <div class="row">
     <div class="container">
         <div class="offset-md-10">
-            <a [routerLink]="['/page-cards/new']"
-               class="btn btn-default">&nbsp; <i class="fa fa-window-restore"></i>
+            <a [routerLink]="['/cards/new']"
+               class="btn btn-default">&nbsp; <i class="fa fa-plus"></i>
                 New Card
             </a>
         </div>
@@ -69,18 +69,18 @@
                     <tbody>
                     <tr *ngFor="let card of pageCards$ | async">
                         <td scope="col">
-                            <a [routerLink]="['/page-cards/', card.$key, 'edit']">
+                            <a [routerLink]="['/cards/', card.$key, 'edit']">
                                 <img [src]="card.photoURL" [alt]="card.title" style="max-width:50px;">
                             </a>
                         </td>
                         <td scope="col">
-                            <a [routerLink]="['/page-cards/', card.$key, 'edit']"
+                            <a [routerLink]="['/cards/', card.$key, 'edit']"
                                class="text-dark text-decoration-none">
                                 {{ card.title }}
                             </a>
                         </td>
                         <td scope="col">
-                            <a [routerLink]="['/page-cards/', card.$key, 'edit']"
+                            <a [routerLink]="['/cards/', card.$key, 'edit']"
                                class="text-dark text-decoration-none">
                                 {{ card.buttonString }}
                             </a>
@@ -103,7 +103,7 @@
                         <td class="text-center">
                             <a class="btn btn-default btn-sm icon-btn md-btn-flat user-tooltip mt-1 ml-2"
                                matTooltip="View card details"
-                               [routerLink]="['/page-cards/', card.$key, 'edit']">
+                               [routerLink]="['/cards/', card.$key, 'edit']">
                                 <i class="fa fa-pencil-alt"></i>
                             </a>
                             <a class="btn btn-default text-danger btn-sm icon-btn md-btn-flat user-tooltip ml-2 mt-1 text-white"

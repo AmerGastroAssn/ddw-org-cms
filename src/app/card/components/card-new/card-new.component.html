@@ -9,9 +9,9 @@
 <div class="row mb-4">
     <div class="container">
         <div class="offset-md-10">
-            <a [routerLink]="['/page-cards']"
+            <a [routerLink]="['/cards']"
                class="btn btn-default">&nbsp; <i class="fa fa-window-restore"></i>
-                All Page Cards
+                All Cards
             </a>
         </div>
     </div>
@@ -30,34 +30,54 @@
                                 </h4>
                                 <hr class="inset-hr mb-3">
                             </div>
-                            <form [formGroup]="newPageCardForm"
-                                  (ngSubmit)="onCreateCard(newPageCardForm.value)">
+                            <form [formGroup]="newCardForm"
+                                  (ngSubmit)="onCreateCard(newCardForm.value)">
                                 <div class="form-group">
 
                                     <div class="form-group">
-                                        <label>Image URL
-                                            <small>(Image at the top of card)</small>
-                                        </label>
-                                        <input type="url"
-                                               class="form-control"
-                                               [class.invalid]="!f.photoURL.valid && f.photoURL.touched"
-                                               [(ngModel)]="card.photoURL"
-                                               formControlName="photoURL">
+                                        <div class="input-group flex-nowrap">
+                                            <div class="input-group-prepend">
+                                            <span class="input-group-text"
+                                                  id="photoURL">
+                                                <i class="fa fa-image"></i>
+                                            </span>
+                                            </div>
+                                            <input type="url"
+                                                   class="form-control"
+                                                   placeholder="Image URL eg: https://"
+                                                   aria-label="photoURL"
+                                                   aria-describedby="addon-wrapping"
+                                                   [class.invalid]="!f.photoURL.valid && f.photoURL.touched"
+                                                   [(ngModel)]="card.photoURL"
+                                                   formControlName="photoURL">
+                                        </div>
                                     </div>
+                                </div>
 
 
-                                    <label>Title</label>
-                                    <input type="text"
-                                           class="form-control"
-                                           [class.invalid]="!f.title.valid && f.title.touched"
-                                           [(ngModel)]="card.title"
-                                           formControlName="title">
+                                <div class="form-group">
+                                    <div class="input-group flex-nowrap">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"
+                                                  id="title">
+                                                <i class="fa fa-h1"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Card Title Text"
+                                               aria-label="title"
+                                               aria-describedby="addon-wrapping"
+                                               [class.invalid]="!f.title.valid && f.title.touched"
+                                               [(ngModel)]="card.title"
+                                               formControlName="title">
+                                    </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Body</label>
                                     <textarea type="text"
                                               rows="5"
+                                              placeholder="Body copy here..."
                                               class="form-control"
                                               [class.invalid]="!f.body.valid && f.body.touched"
                                               [(ngModel)]="card.body"
@@ -66,22 +86,42 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Button Text</label>
-                                    <input type="text"
-                                           class="form-control"
-                                           [class.invalid]="!f.buttonString.valid && f.buttonString.touched"
-                                           [(ngModel)]="card.buttonString"
-                                           formControlName="buttonString">
+                                    <div class="input-group flex-nowrap">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"
+                                                  id="buttonString">
+                                                <i class="fa fa-font"></i>
+                                            </span>
+                                        </div>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Learn More"
+                                               aria-label="buttonString"
+                                               aria-describedby="buttonString"
+                                               [class.invalid]="!f.buttonString.valid && f.buttonString.touched"
+                                               [(ngModel)]="card.buttonString"
+                                               formControlName="buttonString">
+                                    </div>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label>Button Link</label>
-                                    <input type="url"
-                                           class="form-control"
-                                           [class.invalid]="!f.url.valid && f.url.touched"
-                                           [(ngModel)]="card.url"
-                                           formControlName="url">
+                                    <div class="input-group flex-nowrap">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"
+                                                  id="url">
+                                                <i class="fa fa-link"></i>
+                                            </span>
+                                        </div>
+                                        <input type="url"
+                                               class="form-control"
+                                               placeholder="https://"
+                                               aria-label="url"
+                                               aria-describedby="url"
+                                               [class.invalid]="!f.url.valid && f.url.touched"
+                                               [(ngModel)]="card.url"
+                                               formControlName="url">
+                                    </div>
                                 </div>
 
 
@@ -100,7 +140,7 @@
                                 </div>
 
                                 <button type="submit"
-                                        [disabled]="!newPageCardForm.valid"
+                                        [disabled]="!newCardForm.valid"
                                         class="btn btn-secondary full-width mb-3 mt-2">
                                     <i class="fa fa-window-restore"></i>&nbsp;Create
                                 </button>
@@ -127,7 +167,8 @@
                 </div>
                 <ng-template #cardPreview>
                     <div class="text-center p-4">
-                        <img src="https://s3.amazonaws.com/DDW/ddw-org/images/gifs/ajax-loader-transp.gif" alt="Waiting">
+                        <img src="https://s3.amazonaws.com/DDW/ddw-org/images/gifs/ajax-loader-transp.gif"
+                             alt="Waiting">
                         <!--<i class="fal fa-spinner-third fa-spin"></i>-->
                         <p class="card-preview">
                             Card will appear here...
