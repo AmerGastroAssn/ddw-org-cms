@@ -29,6 +29,7 @@ export class SidenavComponent implements OnInit {
     showPageCardToggle: boolean;
     showImagesToggle: boolean;
     showFilesToggle: boolean;
+    showBlogPostToggle: boolean;
     user: User;
     user$: Observable<User>;
     isAdmin: boolean;
@@ -109,6 +110,10 @@ export class SidenavComponent implements OnInit {
 
     onShowFilesToggle() {
         this.showFilesToggle = !this.showFilesToggle;
+    }
+
+    onShowBlogPostToggle() {
+        this.showBlogPostToggle = !this.showBlogPostToggle;
     }
 
     onLogout() {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
+import { BlogPostModule } from './blog-post/blog-post.module';
 import { CalendarModule } from './calendar/calendar.module';
 import { CardModule } from './card/card.module';
 import { ContentSectionModule } from './content-section/content-section.module';
@@ -31,6 +32,7 @@ const routes: Routes = [
         CardModule,
         PageModule,
         HomepageModule,
+        BlogPostModule,
     ]
 })
 export class AppRoutingModule {}

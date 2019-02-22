@@ -9,9 +9,9 @@
 <div class="row mb-4">
     <div class="container">
         <div class="offset-md-10">
-            <a [routerLink]="['/cards']"
-               class="btn btn-default">&nbsp; <i class="fa fa-window-restore"></i>
-                All Cards
+            <a [routerLink]="['/blog-posts']"
+               class="btn btn-default">&nbsp; <i class="fa fa-rss-square"></i>
+                All Blog Posts
             </a>
         </div>
     </div>
@@ -26,14 +26,14 @@
                     <div class="card bg-lighter inner-card">
                         <div class="card-body">
                             <div class="card-header-title">
-                                <h4 *ngIf="card && card.title">Editing ({{ card.title }})
+                                <h4 *ngIf="post && post.buttonString">Editing ({{ post.buttonString }})
                                     <small class="text-secondary"></small>
                                 </h4>
                                 <hr class="inset-hr mt-3 mb-3">
                             </div>
-                            <form [formGroup]="editCardForm"
-                                  (ngSubmit)="onUpdatePageCard(editCardForm.value)"
-                                  *ngIf="card">
+                            <form [formGroup]="editPostForm"
+                                  (ngSubmit)="onUpdateBlogPost(editPostForm.value)"
+                                  *ngIf="post">
 
                                 <div class="form-group">
                                     <div class="input-group flex-nowrap">
@@ -49,41 +49,29 @@
                                                aria-label="photoURL"
                                                aria-describedby="addon-wrapping"
                                                [class.invalid]="!f.photoURL.valid && f.photoURL.touched"
-                                               [(ngModel)]="card.photoURL"
+                                               [(ngModel)]="post.photoURL"
                                                formControlName="photoURL">
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <div class="input-group flex-nowrap">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"
-                                                  id="title">
-                                                <i class="fa fa-h1"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text"
-                                               class="form-control"
-                                               placeholder="BlogPost Title Text"
-                                               aria-label="title"
-                                               aria-describedby="addon-wrapping"
-                                               [class.invalid]="!f.title.valid && f.title.touched"
-                                               [(ngModel)]="card.title"
-                                               formControlName="title">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <textarea type="text"
-                                              rows="5"
-                                              placeholder="Body copy here..."
-                                              class="form-control"
-                                              [class.invalid]="!f.body.valid && f.body.touched"
-                                              [(ngModel)]="card.body"
-                                              formControlName="body">
-                                </textarea>
-                                </div>
+                                <!--<div class="form-group">-->
+                                <!--<div class="input-group flex-nowrap">-->
+                                <!--<div class="input-group-prepend">-->
+                                <!--<span class="input-group-text"-->
+                                <!--id="title">-->
+                                <!--<i class="fa fa-h1"></i>-->
+                                <!--</span>-->
+                                <!--</div>-->
+                                <!--<input type="text"-->
+                                <!--class="form-control"-->
+                                <!--placeholder="BlogPost Title Text"-->
+                                <!--aria-label="title"-->
+                                <!--aria-describedby="addon-wrapping"-->
+                                <!--[class.invalid]="!f.title.valid && f.title.touched"-->
+                                <!--[(ngModel)]="post.title"-->
+                                <!--formControlName="title">-->
+                                <!--</div>-->
+                                <!--</div>-->
 
                                 <div class="form-group">
                                     <div class="input-group flex-nowrap">
@@ -99,7 +87,7 @@
                                                aria-label="buttonString"
                                                aria-describedby="buttonString"
                                                [class.invalid]="!f.buttonString.valid && f.buttonString.touched"
-                                               [(ngModel)]="card.buttonString"
+                                               [(ngModel)]="post.buttonString"
                                                formControlName="buttonString">
                                     </div>
                                 </div>
@@ -119,7 +107,7 @@
                                                aria-label="url"
                                                aria-describedby="url"
                                                [class.invalid]="!f.url.valid && f.url.touched"
-                                               [(ngModel)]="card.url"
+                                               [(ngModel)]="post.url"
                                                formControlName="url">
                                     </div>
                                 </div>
@@ -131,7 +119,7 @@
                                         <input type="checkbox"
                                                class="custom-control-input"
                                                id="isExtURL"
-                                               [(ngModel)]="card.isExtURL"
+                                               [(ngModel)]="post.isExtURL"
                                                formControlName="isExtURL">
                                         <label class="custom-control-label"
                                                for="isExtURL">External URL?
@@ -139,10 +127,21 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <textarea type="text"
+                                              rows="5"
+                                              placeholder="Body copy here..."
+                                              class="form-control"
+                                              [class.invalid]="!f.body.valid && f.body.touched"
+                                              [(ngModel)]="post.body"
+                                              formControlName="body">
+                                    </textarea>
+                                </div>
+
                                 <button type="submit"
-                                        [disabled]="!editCardForm.valid"
+                                        [disabled]="!editPostForm.valid"
                                         class="btn btn-secondary full-width mb-3 mt-2">
-                                    <i class="fa fa-window-restore"></i>&nbsp;Update
+                                    <i class="fa fa-rss-square"></i>&nbsp;Update
                                 </button>
                             </form>
                         </div>
@@ -156,41 +155,41 @@
                 <div class="card-body">
                     <p class="text-right">
                         <a class="btn btn-danger btn-sm text-white"
-                           (click)="onDeletePageCard(card.$key, card.title)">
+                           (click)="onDeleteBlogPost(post.id)">
                             <i class="fa fa-trash-alt"></i>&nbsp;Delete
                         </a>
                     </p>
                     <h6 class="alert alert-dark-dark text-center"
-                        *ngIf="card && card.isExtURL">
+                        *ngIf="post && post.isExtURL">
                         <i class="fa fa-check-square"></i> &nbsp;External URL
                     </h6>
                     <h6 class="alert alert-dark text-center"
-                        *ngIf="card && !card.isExtURL">
+                        *ngIf="post && !post.isExtURL">
                         <i class="fa fa-times"></i> &nbsp;External URL
                     </h6>
-                    <h4 class="card-header-title">BlogPost Preview</h4>
+                    <h4 class="card-header-title">Blog Post Preview</h4>
                     <hr class="inset-hr">
                 </div>
 
                 <div class="card inner-card ml-4 mr-4 mb-4 mt-0"
-                     *ngIf="card">
+                     *ngIf="post">
                     <div class="card-body">
-                        <img class="card-img-top"
-                             [src]="card.photoURL"
-                             [alt]="card.title"
-                             *ngIf="card.photoURL">
-                        <div class="card-body text-center">
-                            <h5 class="card-title"
-                                *ngIf="card.title">{{ card.title }}</h5>
-                            <p class="card-text"
-                               *ngIf="card.body">{{ card.body }}</p>
-                            <p class="text-center"
-                               *ngIf="card.url && card.buttonString">
-                                <a [href]="card.url"
-                                   class="btn btn-warning btn-lg">
-                                    {{ card.buttonString }}
+                        <div class="card text-center ml-3 mr-3">
+                            <div class="row">
+                                <div class="col-sm-10 offset-sm-1">
+                                    <img class="card-img-top rounded-circle img-fluid text-center"
+                                         [src]="post.photoURL">
+                                </div>
+                            </div>
+                            <p class="text-center pt-3">
+                                <a [href]="post.url"
+                                   class="link-text">
+                                    {{ post.buttonString }}
                                 </a>
                             </p>
+                            <div class="card-body">
+                                <p class="card-text">{{ post.body }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

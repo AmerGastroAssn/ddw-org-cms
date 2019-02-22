@@ -262,7 +262,7 @@ export class HomepageEditComponent implements OnInit {
         this.homepageService.updateVideoURL(videoForm);
     }
 
-    onHomePageSubmit(homePageFormData: Homepage) {
+    onHomePageSubmit(homePageFormData: Homepage) {w
         this.homepageService.updateHomeForm(homePageFormData);
     }
 
