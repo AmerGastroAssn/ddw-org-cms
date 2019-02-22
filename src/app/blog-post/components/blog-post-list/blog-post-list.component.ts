@@ -23,7 +23,7 @@ import { BlogPostService } from '../../services/blog-post.service';
 
             // fade out when destroyed. this could also be written as transition('void => *')
             transition(':leave',
-              animate(300, style({ opacity: 0 })))
+                animate(300, style({ opacity: 0 })))
         ])
     ]
 })
@@ -31,7 +31,7 @@ export class BlogPostListComponent implements OnInit {
     blogPosts$: Observable<BlogPost[]>;
 
     constructor(
-      private postService: BlogPostService
+        private postService: BlogPostService
     ) {
     }
 
@@ -40,8 +40,8 @@ export class BlogPostListComponent implements OnInit {
         this.blogPosts$ = this.postService.getAllPosts();
     }
 
-    onDeleteBlogPost(id: string, title: string) {
-        this.postService.deleteBlogPost(id, title);
+    onDeleteBlogPost(id: string) {
+        this.postService.deleteBlogPost(id);
     }
 
 }

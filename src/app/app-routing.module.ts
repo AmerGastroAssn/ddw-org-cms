@@ -5,6 +5,7 @@ import { BlogPostModule } from './blog-post/blog-post.module';
 import { CalendarModule } from './calendar/calendar.module';
 import { CardModule } from './card/card.module';
 import { ContentSectionModule } from './content-section/content-section.module';
+import { CustomNavLinkModule } from './custom-nav-link/custom-nav-link.module';
 import { FileModule } from './file/file.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { ImageModule } from './image/image.module';
@@ -33,6 +34,7 @@ const routes: Routes = [
         PageModule,
         HomepageModule,
         BlogPostModule,
+        CustomNavLinkModule,
     ]
 })
 export class AppRoutingModule {}
