@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';
 import { DailyVideo } from '../models/daily-video';
-import { Homepage } from '../models/Homepage';
+import { Homepage } from '../models/homepage';
 
 @Injectable({
     providedIn: 'root'

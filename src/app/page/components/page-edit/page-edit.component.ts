@@ -173,7 +173,7 @@ export class PageEditComponent implements OnInit {
         // Settings
         this.disableAdminOnEdit = this.settingsService.getAdminSettings().disableAdmin;
 
-        this.pageCards$ = this.cardService.getAllPageCards();
+        this.pageCards$ = this.cardService.getAllCards();
         this.calendars$ = this.calendarService.getAllCalendars();
         this.textSections$ = this.textSectionService.getAllTextSections();
         this.textSectionPreviews$ = this.textSectionService.getAllTextSections();

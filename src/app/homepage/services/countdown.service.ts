@@ -4,7 +4,7 @@ import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';
 import 'rxjs/add/observable/interval';
 import { map } from 'rxjs/operators';
-import { Countdown } from '../models/Countdown';
+import { Countdown } from '../models/countdown';
 
 export interface Time {
     days: number;

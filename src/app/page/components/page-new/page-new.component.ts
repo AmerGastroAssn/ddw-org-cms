@@ -144,7 +144,7 @@ export class PageNewComponent implements OnInit, OnDestroy {
         // Get Calendar Titles
         this.calendar$ = this.calendarService.getAllCalendars();
         // Page Cards:
-        this.pageCards$ = this.cardService.getAllPageCards();
+        this.pageCards$ = this.cardService.getAllCards();
         this.pages$ = this.pageService.getAllPages();
 
         // Content Sections:

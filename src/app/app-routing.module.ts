@@ -10,6 +10,7 @@ import { FileModule } from './file/file.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { ImageModule } from './image/image.module';
 import { PageModule } from './page/page.module';
+import { PressReleaseModule } from './press-release/press-release.module';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
         HomepageModule,
         BlogPostModule,
         CustomNavLinkModule,
+        PressReleaseModule,
     ]
 })
 export class AppRoutingModule {}
