@@ -48,8 +48,8 @@ export class BlogPostService {
         return this.blogPostCollection.valueChanges();
     }
 
-    getBlogPost(key: string): Observable<BlogPost> {
-        this.blogPostDoc = this.afs.doc<BlogPost>(`blogPosts/${key}`);
+    getBlogPost(id: string): Observable<BlogPost> {
+        this.blogPostDoc = this.afs.doc<BlogPost>(`blogPosts/${id}`);
         this.blogPost$ = this.blogPostDoc.snapshotChanges().map((action) => {
             if (action.payload.exists === false) {
                 return null;

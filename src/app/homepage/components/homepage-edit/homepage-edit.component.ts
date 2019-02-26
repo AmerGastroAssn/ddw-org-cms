@@ -4,6 +4,8 @@ import { MatSnackBar } from '@angular/material';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { BsDatepickerConfig } from 'ngx-bootstrap';
 import { Observable } from 'rxjs';
+import { BlogPost } from '../../../blog-post/models/blog-post';
+import { BlogPostService } from '../../../blog-post/services/blog-post.service';
 import { Calendar } from '../../../calendar/models/Calendar';
 import { CalendarService } from '../../../calendar/services/calendar.service';
 import { Card } from '../../../card/models/card';
@@ -84,6 +86,10 @@ export class HomepageEditComponent implements OnInit {
     cardOption1: string;
     cardOption2: string;
     cardOption3: string;
+    posts$: Observable<BlogPost[]>;
+    postOption1: string;
+    postOption2: string;
+    postOption3: string;
 
     CkeditorConfig = {
         allowedContent: true,
@@ -99,6 +105,7 @@ export class HomepageEditComponent implements OnInit {
         private homepageService: HomepageService,
         private calendarService: CalendarService,
         private cardService: CardService,
+        private postService: BlogPostService,
     ) {
         // Get Countdown
         this.countdownService.getCountdownDetails().subscribe((countdown: Countdown) => {
@@ -158,6 +165,9 @@ export class HomepageEditComponent implements OnInit {
                     postsSubtitle: [this.homePage.postsSubtitle],
                     postsButtonText: [this.homePage.postsButtonText],
                     postsButtonURL: [this.homePage.postsButtonURL],
+                    postOption1: [this.homePage.postOption1],
+                    postOption2: [this.homePage.postOption2],
+                    postOption3: [this.homePage.postOption3],
                     postsHidden: [this.homePage.postsHidden],
                     onDemandTitle: [this.homePage.onDemandTitle],
                     onDemandText: [this.homePage.onDemandText],
@@ -210,6 +220,9 @@ export class HomepageEditComponent implements OnInit {
                 this.postsSubtitle = this.homePageForm.value.postsSubtitle;
                 this.postsButtonText = this.homePageForm.value.postsButtonText;
                 this.postsButtonURL = this.homePageForm.value.postsButtonURL;
+                this.postOption1 = this.homePageForm.value.postOption1;
+                this.postOption2 = this.homePageForm.value.postOption2;
+                this.postOption3 = this.homePageForm.value.postOption3;
                 this.postsHidden = this.homePageForm.value.postsHidden;
                 this.onDemandTitle = this.homePageForm.value.onDemandTitle;
                 this.onDemandText = this.homePageForm.value.onDemandText;
@@ -251,6 +264,7 @@ export class HomepageEditComponent implements OnInit {
     ngOnInit() {
         this.calendars$ = this.calendarService.getAllCalendars();
         this.cards$ = this.cardService.getAllCards();
+        this.posts$ = this.postService.getAllPosts();
     }
 
 

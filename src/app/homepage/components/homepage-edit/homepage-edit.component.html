@@ -150,7 +150,6 @@
                                     </div>
 
                                     <!-- * Cards * -->
-                                    <!-- * TODO: Add BlogPost Pop-up previews when card section is added * -->
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <hr class="inset-hr"/>
@@ -198,7 +197,7 @@
                                             </div>
 
                                             <div class="form-group" *ngIf="!homePage.cardsHidden">
-                                                <label for="cardOption1">Select BlogPost
+                                                <label for="cardOption1">Select Card
                                                     &nbsp;&nbsp;<i class="fa fa-align-left"></i> Left
                                                 </label>
                                                 <select class="form-control"
@@ -212,7 +211,7 @@
                                             </div>
 
                                             <div class="form-group" *ngIf="!homePage.cardsHidden">
-                                                <label for="cardOption2">Select BlogPost
+                                                <label for="cardOption2">Select Card
                                                     &nbsp;&nbsp;<i class="fa fa-align-center"></i>
                                                     Middle
                                                 </label>
@@ -226,8 +225,9 @@
                                                 </select>
                                             </div>
 
-                                            <div class="form-group" *ngIf="!homePage.cardsHidden">
-                                                <label for="cardOption3">Select BlogPost
+                                            <div class="form-group"
+                                                 *ngIf="!homePage.cardsHidden">
+                                                <label for="cardOption3">Select Card
                                                     &nbsp;&nbsp;<i class="fa fa-align-right"></i>
                                                     Right
                                                 </label>
@@ -339,7 +339,7 @@
                                                           rows="3"
                                                           id="postsSubtitle"
                                                           formControlName="postsSubtitle">
-                                        </textarea>
+                                                </textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -360,6 +360,59 @@
                                                        class="form-control"
                                                        id="postsButtonURL"
                                                        formControlName="postsButtonURL">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- * Blog Posts Select * -->
+                                    <div class="row" *ngIf="!homePage.postsHidden">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="postOption1">Select Blog Post
+                                                    &nbsp;&nbsp;<i class="fa fa-align-left"></i> Left
+                                                </label>
+                                                <select class="form-control"
+                                                        id="postOption1"
+                                                        formControlName="postOption1">
+                                                    <option *ngFor="let post1 of posts$ | async"
+                                                            [value]="post1.id">
+                                                        {{ post1.body | slice:0:100 }}
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="postOption2">Select Blog Post
+                                                    &nbsp;&nbsp;<i class="fa fa-align-center"></i>
+                                                    Middle
+                                                </label>
+                                                <select class="form-control"
+                                                        id="postOption2"
+                                                        formControlName="postOption2">
+                                                    <option *ngFor="let post2 of posts$ | async"
+                                                            [value]="post2.id">
+                                                        {{ post2.body | slice:0:100 }}
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="postOption3">Select Blog Post
+                                                    &nbsp;&nbsp;<i class="fa fa-align-right"></i>
+                                                    Right
+                                                </label>
+                                                <select class="form-control"
+                                                        id="postOption3"
+                                                        formControlName="postOption3">
+                                                    <option *ngFor="let post3 of posts$ | async"
+                                                            [value]="post3.id">
+                                                        {{ post3.body | slice:0:100}}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <a [routerLink]="['/blog-posts']" class="btn btn-default">
+                                                    <i class="fa fa-pencil-alt"></i>&nbsp;Edit Blog Posts
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -710,15 +763,16 @@
                               (ngSubmit)="onDailyVideoSubmit(dailyVideoForm.value)"
                               *ngIf="dailyVideo; else videoLoading">
                             <div class="form-group">
-                                <label>
-                                    <h5>DDW Daily News Video</h5>
-                                    <p>
-                                        <small>If left blank, space will be removed from that blue section</small>
-                                    </p>
-                                    <p class="text-light">URL needs to come from a embedded iFrame</p>
-                                    <p class="text-light">ie. Go to YouTube video > share > embed > grab url from
-                                        src="this-url"</p>
+                                <label class="helv">
+                                    <h5 class="helv">DDW Daily News Video</h5>
                                 </label>
+                                <p class="helv">
+                                    <small>If left blank, space will be removed from that blue section</small>
+                                </p>
+                                <p class="text-light helv">URL needs to come from a embedded iFrame</p>
+                                <p class="text-light helv">ie. Go to YouTube video > share > embed > grab url from
+                                    src="this-url"</p>
+
                                 <input type="url"
                                        class="form-control"
                                        formControlName="videoURL">
@@ -744,9 +798,12 @@
                               (ngSubmit)="onCountdownSubmit(countdownForm.value)"
                               *ngIf="countdown; else loading">
                             <div class="form-group">
-                                <label><h5>Set Countdown Date</h5>
-                                    Current Set Date is: <br> {{ countdown.date.toDate() | date:'medium' }}
-                                </label>
+                                <label><h5 class="helv">Set Countdown Date</h5></label><br>
+                                <div class="pb-2">
+                                    Current Set Date is:
+                                    <b>{{ countdown.date.toDate() | date:'medium' }}</b>
+                                </div>
+
                                 <input type="text"
                                        class="form-control"
                                        bsDatepicker
