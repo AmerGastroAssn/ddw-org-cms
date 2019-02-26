@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ng2-ckeditor';
 import { FileService } from '../file/services/file.service';
 import { ImageService } from '../image/services/image.service';
-import { BottomSheetComponent } from '../shared/components/bottom-sheet/bottom-sheet.component';
 import { AdsComponent } from './components/ads/ads.component';
 import { AnalyticsDashboardComponent } from './components/analytics-dashboard/analytics-dashboard.component';
 import { MetaComponent } from './components/meta/meta.component';
@@ -20,15 +21,17 @@ import { SettingsService } from './services/settings.service';
     declarations: [
         ModalComponent,
         AdsComponent,
-        BottomSheetComponent,
         AnalyticsDashboardComponent,
         MetaComponent,
-        PrivacyPolicyComponent,
         SettingsComponent,
+        PrivacyPolicyComponent,
     ],
     imports: [
         CommonModule,
         CoreRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CKEditorModule,
     ],
     providers: [
         AdsService,
@@ -36,9 +39,10 @@ import { SettingsService } from './services/settings.service';
         ImageService,
         MetaService,
         ModalService,
-        PrivacyPolicyService,
         SettingsService,
+        PrivacyPolicyService,
     ],
-    exports: []
+    exports: [],
+
 })
 export class CoreModule {}

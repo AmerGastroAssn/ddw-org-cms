@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
-const routes: Routes = [];
+const coreRoutes: Routes = [
+    { path: 'privacy-policy', component: PrivacyPolicyComponent },
+];
 
 @NgModule({
     imports: [
-        RouterModule.forChild(routes),
-        FormsModule,
-        ReactiveFormsModule,
+        RouterModule.forChild(coreRoutes),
     ],
     exports: [
         RouterModule
