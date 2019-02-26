@@ -6,7 +6,6 @@ import { CalendarModule } from './calendar/calendar.module';
 import { CardModule } from './card/card.module';
 import { ContactModule } from './contact/contact.module';
 import { ContentSectionModule } from './content-section/content-section.module';
-import { PrivacyPolicyComponent } from './core/components/privacy-policy/privacy-policy.component';
 import { CoreModule } from './core/core.module';
 import { CustomNavLinkModule } from './custom-nav-link/custom-nav-link.module';
 import { FileModule } from './file/file.module';
@@ -45,6 +44,6 @@ const routes: Routes = [
         ContactModule,
         SharedModule,
     ],
-    entryComponents: [PrivacyPolicyComponent]
+    entryComponents: []
 })
 export class AppRoutingModule {}
