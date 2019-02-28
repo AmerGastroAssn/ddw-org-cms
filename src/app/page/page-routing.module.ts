@@ -27,7 +27,7 @@ const routes: Routes = [
             { path: 'new', component: PageNewComponent, canActivate: [AuthGuard] },
             { path: ':id', component: PageDetailsComponent, canActivate: [AuthGuard] },
             { path: ':id/edit', component: PageEditComponent, canActivate: [AuthGuard] },
-        ]
+        ], canActivate: [AuthGuard]
     },
 ];
 

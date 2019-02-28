@@ -32,7 +32,7 @@ export class AdminGuard implements CanActivate {
         if (this.currentUser.admin === true) {
             return true;
         } else {
-            this.router.navigate(['/admin/login']);
+            this.router.navigate(['/auth/login']);
             this.flashMessage.show(`Insufficient privileges. Please contact the Development team for help.`, {
                 cssClass: 'alert-warning',
                 timeout: 5000

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../shared/guards/auth.guard';
 import { CallToActionDetailComponent } from './components/call-to-action/call-to-action-detail/call-to-action-detail.component';
 import { CallToActionEditComponent } from './components/call-to-action/call-to-action-edit/call-to-action-edit.component';
 import { CallToActionListComponent } from './components/call-to-action/call-to-action-list/call-to-action-list.component';
@@ -20,7 +21,7 @@ const contentSectionRoutes: Routes = [
             { path: 'new', component: CallToActionNewComponent },
             { path: ':id', component: CallToActionDetailComponent },
             { path: ':id/edit', component: CallToActionEditComponent },
-        ]
+        ], canActivate: [AuthGuard]
     },
     {
         path: 'text-section', component: TextSectionComponent,
@@ -29,7 +30,7 @@ const contentSectionRoutes: Routes = [
             { path: 'new', component: TextSectionNewComponent },
             { path: ':id', component: TextSectionDetailComponent },
             { path: ':id/edit', component: TextSectionEditComponent },
-        ]
+        ], canActivate: [AuthGuard]
     }
 
 ];

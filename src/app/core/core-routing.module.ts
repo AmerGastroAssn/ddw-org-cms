@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from '../shared/guards/admin.guard';
+import { AuthGuard } from '../shared/guards/auth.guard';
 import { AdsComponent } from './components/ads/ads.component';
 import { AnalyticsDashboardComponent } from './components/analytics-dashboard/analytics-dashboard.component';
 import { MetaComponent } from './components/meta/meta.component';
@@ -8,12 +10,12 @@ import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-poli
 import { SettingsComponent } from './components/settings/settings.component';
 
 const coreRoutes: Routes = [
-    { path: 'privacy-policy', component: PrivacyPolicyComponent },
-    { path: 'dashboard', component: AnalyticsDashboardComponent },
-    { path: 'meta', component: MetaComponent },
-    { path: 'modal', component: ModalComponent },
-    { path: 'ads', component: AdsComponent },
-    { path: 'settings', component: SettingsComponent },
+    { path: 'privacy-policy', component: PrivacyPolicyComponent, canActivate: [AuthGuard] },
+    { path: 'dashboard', component: AnalyticsDashboardComponent, canActivate: [AuthGuard] },
+    { path: 'meta', component: MetaComponent, canActivate: [AuthGuard] },
+    { path: 'modal', component: ModalComponent, canActivate: [AuthGuard] },
+    { path: 'ads', component: AdsComponent, canActivate: [AuthGuard] },
+    { path: 'settings', component: SettingsComponent, canActivate: [AdminGuard] },
 ];
 
 @NgModule({

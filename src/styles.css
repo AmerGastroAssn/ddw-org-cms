@@ -18,7 +18,7 @@
 }
 
 /* Front Pages */
-p, li {
+.frontend-content > p, .frontend-content > ul, .frontend-content > li {
     font-family: var(--frontend-font);
     line-height: 2;
     font-size: 18px;

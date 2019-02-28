@@ -53,7 +53,7 @@
 
             <!-- * TEXT SECTIONS * -->
             <!-- * Text Section Top * -->
-            <span *ngIf="tsTopBody && page.contentSectionTop"
+            <span class="frontend-content" *ngIf="tsTopBody && page.contentSectionTop"
                   [innerHTML]="tsTopBody">
             </span>
         </div>
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="col-md-7 col-quote">
-                        <span [innerHTML]="ctaBody"></span>
+                        <span class="frontend-content" [innerHTML]="ctaBody"></span>
 
                         <div class="row">
                             <div class="col-md-6 offset-md-3">
@@ -113,7 +113,7 @@
     <div class="row">
         <div class="container">
             <!-- * Text Section Bottom * -->
-            <div *ngIf="tsBottomBody && page.contentSectionBottom"
+            <div class="frontend-content" *ngIf="tsBottomBody && page.contentSectionBottom"
                  [innerHTML]="tsBottomBody">
             </div>
 

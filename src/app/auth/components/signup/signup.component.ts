@@ -45,8 +45,8 @@ export class SignupComponent implements OnInit {
 
     ngOnInit() {
         // Settings:
-        // this.allowSignup = this.settingsService.getAdminSettings().allowSignup;
-        // this.disableAdmin = this.settingsService.getAdminSettings().disableAdmin;
+        this.allowSignup = this.settingsService.getAdminSettings().allowSignup;
+        this.disableAdmin = this.settingsService.getAdminSettings().disableAdmin;
 
         // Form:
         this.signupForm = this.fb.group({

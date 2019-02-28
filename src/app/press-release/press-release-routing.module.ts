@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../shared/guards/auth.guard';
 import { PressReleaseDetailsComponent } from './components/press-release-details/press-release-details.component';
 import { PressReleaseEditComponent } from './components/press-release-edit/press-release-edit.component';
 import { PressReleaseListComponent } from './components/press-release-list/press-release-list.component';
@@ -14,7 +15,7 @@ const pressReleaseRoutes: Routes = [
             { path: 'new', component: PressReleaseNewComponent },
             { path: ':id', component: PressReleaseDetailsComponent },
             { path: ':id/edit', component: PressReleaseEditComponent },
-        ]
+        ], canActivate: [AuthGuard]
     },
 ];
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../shared/guards/auth.guard';
 import { BlogPostEditComponent } from './components/blog-post-edit/blog-post-edit.component';
 import { BlogPostListComponent } from './components/blog-post-list/blog-post-list.component';
 import { BlogPostNewComponent } from './components/blog-post-new/blog-post-new.component';
@@ -11,7 +12,7 @@ const cardRoutes: Routes = [
             { path: '', component: BlogPostListComponent },
             { path: 'new', component: BlogPostNewComponent },
             { path: ':id/edit', component: BlogPostEditComponent },
-        ]
+        ], canActivate: [AuthGuard]
     }
 ];
 
