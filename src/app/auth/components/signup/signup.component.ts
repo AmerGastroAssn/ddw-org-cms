@@ -87,7 +87,7 @@ export class SignupComponent implements OnInit {
                         verticalPosition: 'bottom',
                         panelClass: ['snackbar-success']
                     });
-                    this.router.navigate(['/admin/login']);
+                    this.router.navigate(['/auth/login']);
                 })
                 .catch((error) => {
                     console.log(`Error~eS:`, error);

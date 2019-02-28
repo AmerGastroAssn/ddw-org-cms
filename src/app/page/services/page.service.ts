@@ -132,7 +132,7 @@ export class PageService {
         };
 
         return pageRef.set(data)
-                      .then((page) => this.router.navigate(['/admin/pages']))
+                      .then((page) => this.router.navigate(['/pages']))
                       .catch((error) => console.log(`ERROR~aP: `, error));
     }
 
@@ -183,7 +183,7 @@ export class PageService {
                 showWidgetSnippet: formData.showWidgetSnippet || false
             };
             pageRef.set(data, { merge: true })
-                   .then(() => this.router.navigate([`/admin/${data.category}`]))
+                   .then(() => this.router.navigate([`/pages/${data.category}`]))
                    .catch((error) => console.log(`ERROR~aP: `, error));
         } else {
             const timestampToNum = formData.date.getTime();
@@ -221,7 +221,7 @@ export class PageService {
                 showWidgetSnippet: formData.showWidgetSnippet || false
             };
             pageRef.set(data, { merge: true })
-                   .then(() => this.router.navigate([`/admin/${data.category}`]))
+                   .then(() => this.router.navigate([`/pages/${data.category}`]))
                    .catch((error) => console.log(`ERROR~aP: `, error));
         }
     }
@@ -229,7 +229,7 @@ export class PageService {
     updatePage2(updatedPage, id: string): void {
         this.pageDoc = this.afs.doc<Page>(`pages/${id}`);
         this.pageDoc.update(updatedPage)
-            .then((page) => this.router.navigate([`/admin/pages/${id}`]))
+            .then((page) => this.router.navigate([`/pages/${id}`]))
             .catch((error) => console.log(`ERROR~uP: `, error));
     }
 
@@ -237,7 +237,7 @@ export class PageService {
         this.pageDoc = this.afs.doc<Page>(`pages/${id}`);
         if (confirm(`Are you sure you want to delete this page? This is irreversible.`)) {
             this.pageDoc.delete()
-                .then((page) => this.router.navigate([`/admin/pages`]))
+                .then((page) => this.router.navigate([`/pages`]))
                 .catch((error) => console.log(`ERROR~dP: `, error));
         }
     }

@@ -29,18 +29,18 @@
                     <tbody>
                     <tr *ngFor="let page of presPage$ | async;">
                         <td scope="col" style="text-align:center;">
-                            <a [routerLink]="['/admin/pages/', page.url]">
+                            <a [routerLink]="['/pages/', page.url]">
                                 <img [src]="page.photoURL"
                                      class="page-image">
                             </a>
                         </td>
                         <td scope="col">
-                            <a [routerLink]="['/admin/pages/', page.url]" class="text-truncate">
+                            <a [routerLink]="['/pages/', page.url]" class="text-truncate">
                                 {{ page.title | slice:0:20 }}
                             </a>
                         </td>
                         <td scope="col">
-                            <a [routerLink]="['/admin/', page.category]" class="btn btn-default">
+                            <a [routerLink]="['/', page.category]" class="btn btn-default">
                                 {{ page.category }} <span class="badge">{{ page.sortOrder }}</span>
                             </a>
                         </td>
@@ -62,12 +62,12 @@
                         </td>
                         <td scope="col" class="date">{{ page.date | date:'mediumDate' }}</td>
                         <td scope="col" style="text-align:center;">
-                            <a [routerLink]="['/admin/calendar']">
+                            <a [routerLink]="['/calendar']">
                                 <span class="badge badge-outline-success" *ngIf="page.hasCalendar">
                                 <i class="fa fa-calendar-check"></i>
                             </span>
                             </a>
-                            <a [routerLink]="['/admin/calendar']">
+                            <a [routerLink]="['/calendar']">
                                 <span class="badge badge-outline-danger" *ngIf="!page.hasCalendar">
                                 <i class="fa fa-calendar-times"></i>
                             </span>
@@ -94,11 +94,11 @@
                         </td>
                         <td style="text-align:center;">
                             <a class="btn btn-default btn-sm icon-btn md-btn-flat user-tooltip ml-1"
-                               [routerLink]="['/admin/pages/', page.url, 'edit']">
+                               [routerLink]="['/pages/', page.url, 'edit']">
                                 <i class="fa fa-pencil"></i>
                             </a>
                             <a class="btn btn-default text-secondary btn-sm icon-btn md-btn-flat user-tooltip ml-1"
-                               [routerLink]="['/admin/pages/', page.url]">
+                               [routerLink]="['/pages/', page.url]">
                                 <i class="fa fa-eye"></i>
                             </a>
                         </td>
@@ -110,14 +110,14 @@
             <!--<nav aria-label="Page navigation example">-->
             <!--<ul class="pagination">-->
             <!--<li class="page-item">-->
-            <!--<a class="page-link" [routerLink]="['/admin/pages']" aria-label="Previous">-->
+            <!--<a class="page-link" [routerLink]="['/pages']" aria-label="Previous">-->
             <!--<span aria-hidden="true">&laquo;</span>-->
             <!--<span class="sr-only">Previous</span>-->
             <!--</a>-->
             <!--</li>-->
-            <!--<li class="page-item"><a class="page-link" [routerLink]="['/admin/pages']">1</a></li>-->
+            <!--<li class="page-item"><a class="page-link" [routerLink]="['/pages']">1</a></li>-->
             <!--<li class="page-item">-->
-            <!--<a class="page-link" [routerLink]="['/admin/pages']" aria-label="Next">-->
+            <!--<a class="page-link" [routerLink]="['/pages']" aria-label="Next">-->
             <!--<span aria-hidden="true">&raquo;</span>-->
             <!--<span class="sr-only">Next</span>-->
             <!--</a>-->

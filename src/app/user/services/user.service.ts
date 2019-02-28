@@ -80,7 +80,7 @@ export class UserService {
         this.userDoc = this.afs.doc<User>(`users/${id}`);
         this.userDoc.update(updatedUser)
             .then((user) => {
-                this.router.navigate([`/admin/users/${id}`]);
+                this.router.navigate([`/users/${id}`]);
                 this.sbAlert.open('User was updated!', 'Dismiss', {
                     duration: 3000,
                     verticalPosition: 'bottom',
@@ -101,7 +101,7 @@ export class UserService {
         if (confirm(`Are you sure you want to delete this user? This is irreversible.`)) {
             this.userDoc.delete()
                 .then((user) => {
-                    this.router.navigate([`/admin/users`]);
+                    this.router.navigate([`/users`]);
                     this.sbAlert.open('User was Deleted!', 'Dismiss', {
                         duration: 3000,
                         verticalPosition: 'bottom',

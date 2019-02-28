@@ -114,7 +114,7 @@ export class TextSectionService {
         console.log('data', data);
         return textSectionRef.set(data, { merge: true })
                              .then(() => {
-                                 this.router.navigate(['/admin/text-section']);
+                                 this.router.navigate(['/text-section']);
                                  this.sbAlert.open('Text Section created', 'Dismiss', {
                                      duration: 3000,
                                      verticalPosition: 'bottom',
@@ -143,7 +143,7 @@ export class TextSectionService {
         console.log('data', data);
         return textSectionRef.set(data)
                              .then(() => {
-                                 this.router.navigate(['/admin/text-section']);
+                                 this.router.navigate(['/text-section']);
                                  this.sbAlert.open('Text Section updated', 'Dismiss', {
                                      duration: 3000,
                                      verticalPosition: 'bottom',

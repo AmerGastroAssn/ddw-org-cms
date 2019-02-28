@@ -121,7 +121,7 @@ export class CallToActionService {
         console.log('data', data);
         return ctaRef.set(data, { merge: true })
                      .then(() => {
-                         this.router.navigate(['/admin/call-to-action']);
+                         this.router.navigate(['/call-to-action']);
                          this.sbAlert.open('Call To Action created', 'Dismiss', {
                              duration: 3000,
                              verticalPosition: 'bottom',
@@ -157,7 +157,7 @@ export class CallToActionService {
         console.log('data', data);
         return ctaRef.set(data)
                      .then(() => {
-                         this.router.navigate(['/admin/call-to-action']);
+                         this.router.navigate(['/call-to-action']);
                          this.sbAlert.open('Call To Action updated', 'Dismiss', {
                              duration: 3000,
                              verticalPosition: 'bottom',

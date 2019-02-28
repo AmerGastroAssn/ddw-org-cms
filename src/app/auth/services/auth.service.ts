@@ -165,7 +165,7 @@ export class AuthService {
                         verticalPosition: 'bottom',
                         panelClass: ['snackbar-success']
                     });
-                    this.router.navigate(['/admin/users']);
+                    this.router.navigate(['/users']);
                 })
                 .catch((error) => {
                     reject(error);
@@ -173,7 +173,7 @@ export class AuthService {
                         cssClass: 'alert-danger',
                         timeout: 5000
                     });
-                    this.router.navigate(['/admin/login']);
+                    this.router.navigate(['/auth/login']);
                 });
         });
     }
@@ -185,7 +185,7 @@ export class AuthService {
                        return this.setUserData(userData, user); // create initial user document
                    })
                    .catch(error => {
-                       this.router.navigate(['/admin/signup']);
+                       this.router.navigate(['/auth/signup']);
                    });
     }
 
@@ -199,7 +199,7 @@ export class AuthService {
                     verticalPosition: 'bottom',
                     panelClass: ['snackbar-info']
                 });
-                this.router.navigate(['/admin/login']);
+                this.router.navigate(['/auth/login']);
             })
             .catch((error) => {
                 this.flashMessage.show(error, {
@@ -221,7 +221,7 @@ export class AuthService {
                            panelClass: ['snackbar-info']
                        });
                        console.log('Email confirmation was sent!');
-                       this.router.navigate(['/admin/login']);
+                       this.router.navigate(['/auth/login']);
                    })
                    .catch((error) => {
                        this.sbAlert.open(error, 'Dismiss', {
@@ -238,7 +238,7 @@ export class AuthService {
                    .then((user) => {
                        this.setUserData(newUser, user)
                            .then(() => {
-                               this.router.navigate([`/admin/users`]);
+                               this.router.navigate([`/users`]);
                            })
                            .catch((error) => {
                                console.log(`ERROR~au: `, error);

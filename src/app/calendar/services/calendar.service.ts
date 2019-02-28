@@ -82,7 +82,7 @@ export class CalendarService {
         console.log('data', data);
         return calRef.set(data, { merge: true })
                      .then(() => {
-                         this.router.navigate(['/admin/calendar']);
+                         this.router.navigate(['/calendar']);
                          this.sbAlert.open('Calendar Event was Updated!', 'Dismiss', {
                              duration: 3000,
                              verticalPosition: 'bottom',
@@ -115,7 +115,7 @@ export class CalendarService {
         console.log('data', data);
         return calRef.set(data)
                      .then(() => {
-                         this.router.navigate(['/admin/calendar']);
+                         this.router.navigate(['/calendar']);
                          this.sbAlert.open('Calendar Event was Updated!', 'Dismiss', {
                              duration: 3000,
                              verticalPosition: 'bottom',

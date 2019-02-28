@@ -6,7 +6,7 @@
             *ngIf="!isLoggedIn"
             class="menu-icon"
             routerLinkActive="active"
-            [routerLink]="['/admin/login']">
+            [routerLink]="['/auth/login']">
         <i class="fa fa-sign-in-alt"></i>
         <br>
         <small class="text-theme-gray">Login</small>
@@ -16,7 +16,7 @@
             class="menu-icon"
             routerLinkActive="active"
             *ngIf="allowSignup && !isLoggedIn"
-            [routerLink]="['/admin/signup']">
+            [routerLink]="['/auth/signup']">
         <i class="fa fa-address-card"></i>
         <br>
         <small class="text-theme-gray">Signup</small>
@@ -40,7 +40,7 @@
                 class="menu-icon"
                 routerLinkActive="active"
                 *ngIf="user$"
-                [routerLink]="['/admin/pages']">
+                [routerLink]="['/pages']">
             <i class="fa fa-copy fa-lg"></i>
             <br>
             <small class="footernav-txt">Pages</small>
@@ -51,7 +51,7 @@
                 routerLinkActive="active"
                 *ngIf="user$"
                 [routerLinkActiveOptions]="{exact:true}"
-                [routerLink]="['/admin/pages/new']">
+                [routerLink]="['/pages/new']">
             <i class="fa fa-file-plus fa-lg"></i>
             <br>
             <small class="footernav-txt">New Page</small>
@@ -61,7 +61,7 @@
                 class="menu-icon"
                 routerLinkActive="active"
                 *ngIf="user$"
-                [routerLink]="['/admin/users']">
+                [routerLink]="['/users']">
             <i class="fa fa-users fa-lg"></i>
             <br>
             <small class="footernav-txt">Users</small>
@@ -85,7 +85,7 @@
                         class="menu-icon"
                         routerLinkActive="active"
                         *ngIf="isLoggedIn"
-                        [routerLink]="['/admin/users/', user.$key ]">
+                        [routerLink]="['/users/', user.uid ]">
                  <img [src]="user.photoURL"
                       class="user-image rounded-circle"> &nbsp;
                 <small>My Profile</small>
@@ -98,7 +98,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn && allowSettings && isAdmin"
-                    [routerLink]="['/admin/meta']">
+                    [routerLink]="['/meta']">
                 <i class="fa fa-chart-line"></i>&nbsp;
                 <small>Meta</small>
             </button>
@@ -107,7 +107,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn && isAdmin"
-                    [routerLink]="['/admin/ads']">
+                    [routerLink]="['/ads']">
                 <i class="fa fa-money-bill-wave"></i>&nbsp;
                 <small>Advertising</small>
             </button>
@@ -116,7 +116,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn && allowSettings && isAdmin"
-                    [routerLink]="['/admin/settings']">
+                    [routerLink]="['/settings']">
                 <i class="fa fa-wrench"></i>&nbsp;
                 <small>Settings</small>
             </button>
@@ -125,7 +125,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/text-section']">
+                    [routerLink]="['/text-section']">
                 <i class="fa fa-align-justify"></i>&nbsp;
                 <small>Text Sections</small>
             </button>
@@ -135,7 +135,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/call-to-action']">
+                    [routerLink]="['/call-to-action']">
                 <i class="fa fa-text-width"></i>&nbsp;
                 <small>Call To Actions</small>
             </button>
@@ -144,18 +144,9 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/cards']">
+                    [routerLink]="['/cards']">
                 <i class="fa fa-passport"></i>&nbsp;
-                <small>Home Page Cards</small>
-            </button>
-
-            <button mat-menu-item
-                    class="menu-icon"
-                    routerLinkActive="active"
-                    *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/page-cards']">
-                <i class="fa fa-passport"></i>&nbsp;
-                <small>Page Cards</small>
+                <small>Cards</small>
             </button>
 
 
@@ -163,7 +154,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/images']">
+                    [routerLink]="['/images']">
                 <i class="fa fa-images"></i>&nbsp;
                 <small>Images</small>
             </button>
@@ -174,7 +165,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/image-uploader']">
+                    [routerLink]="['/images/uploader']">
                 <i class="fa fa-cloud-upload-alt"></i>&nbsp;
                 <small>Image Uploader</small>
             </button>
@@ -183,7 +174,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/featured-posts']">
+                    [routerLink]="['/blog-posts']">
                 <i class="fa fa-passport"></i>&nbsp;
                 <small>Featured Posts</small>
             </button>
@@ -192,7 +183,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/press-releases']">
+                    [routerLink]="['/press-releases']">
                 <i class="fa fa-bullhorn"></i>&nbsp;
                 <small>Press Releases</small>
             </button>
@@ -202,7 +193,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/contacts']">
+                    [routerLink]="['/contacts']">
                 <i class="fa fa-address-book"></i>&nbsp;
                 <small>Contacts</small>
             </button>
@@ -211,7 +202,7 @@
                     class="menu-icon"
                     routerLinkActive="active"
                     *ngIf="isLoggedIn"
-                    [routerLink]="['/admin/calendar']">
+                    [routerLink]="['/calendar']">
                 <i class="fa fa-calendar-alt"></i>&nbsp;
                 <small>Calendars</small>
             </button>
