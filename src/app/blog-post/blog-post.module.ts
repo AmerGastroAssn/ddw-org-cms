@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImageModule } from '../image/image.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { BlogPostRoutingModule } from './blog-post-routing.module';
 import { BlogPostEditComponent } from './components/blog-post-edit/blog-post-edit.component';
@@ -25,6 +26,7 @@ import { BlogPostService } from './services/blog-post.service';
         ReactiveFormsModule,
         BlogPostRoutingModule,
         ImageModule,
+        SharedModule,
     ],
     providers: [
         BlogPostService,

@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ImageModule } from '../image/image.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { CardRoutingModule } from './card-routing.module';
 import { CardEditComponent } from './components/card-edit/card-edit.component';
@@ -25,6 +26,7 @@ import { CardService } from './services/card.service';
         ReactiveFormsModule,
         CardRoutingModule,
         ImageModule,
+        SharedModule,
     ],
     providers: [
         CardService,

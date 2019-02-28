@@ -43,6 +43,8 @@ export class CallToActionListComponent implements OnInit {
     startObs = this.startAt.asObservable();
     endObs = this.endAt.asObservable();
     lastKeyPress = 0;
+    favicon = 'fa fa-text-width';
+    sectionName = 'Call To Actions (CTA)';
 
     constructor(
         private ctaService: CallToActionService,

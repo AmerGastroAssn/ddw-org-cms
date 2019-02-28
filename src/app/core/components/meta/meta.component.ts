@@ -20,6 +20,8 @@ export class MetaComponent implements OnInit {
     headerArea: string;
     seo: string;
     widgetSnippet: string;
+    favicon = 'fa fa-chart-line';
+    sectionName = 'Meta Settings';
 
 
     constructor(

@@ -25,6 +25,8 @@ export class SignupComponent implements OnInit {
     displayName: string;
     allowSignup: boolean;
     disableAdmin: boolean;
+    favicon = 'fa fa-user-lock';
+    sectionName = 'Signup';
 
 
     constructor(

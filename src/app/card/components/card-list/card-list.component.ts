@@ -29,6 +29,8 @@ import { CardService } from '../../services/card.service';
 })
 export class CardListComponent implements OnInit {
     pageCards$: Observable<Card[]>;
+    favicon = 'fa fa-window-restore';
+    sectionName = 'Cards';
 
     constructor(
       private cardService: CardService

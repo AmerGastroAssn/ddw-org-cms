@@ -17,7 +17,7 @@ import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
-    { path: '**', redirectTo: '', pathMatch: 'full' },
+    { path: '**', redirectTo: '/pages', pathMatch: 'full' },
 ];
 
 @NgModule({

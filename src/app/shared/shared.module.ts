@@ -77,7 +77,6 @@ import { SharedRoutingModule } from './shared-routing.module';
         MatCardModule,
         SafeHtmlPipe,
         MatSnackBarModule,
-
     ],
     providers: [
         AuthService,

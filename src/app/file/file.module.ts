@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule, MatTooltipModule } from '@angular/material';
 import { ProgressbarModule } from 'ngx-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 import { FileListComponent } from './components/file-list/file-list.component';
 import { FileUploaderItemComponent } from './components/file-uploader/file-uploader-item/file-uploader-item.component';
 import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
@@ -25,6 +26,7 @@ import { FileService } from './services/file.service';
         MatSelectModule,
         MatTooltipModule,
         ProgressbarModule,
+        SharedModule,
     ],
     providers: [
         FileService,

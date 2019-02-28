@@ -21,6 +21,8 @@ export class FileListComponent implements OnInit {
     startObs = this.startAt.asObservable();
     endObs = this.endAt.asObservable();
     fileType: string;
+    favicon = 'fa fa-align-justify';
+    sectionName = 'Files';
 
     selectedViewNumber = 25;
     viewNumber: any[] = [

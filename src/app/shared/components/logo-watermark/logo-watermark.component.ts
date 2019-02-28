@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-logo-watermark',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./logo-watermark.component.css']
 })
 export class LogoWatermarkComponent implements OnInit {
+    @Input() favicon: string;
+    @Input() sectionName: string;
 
   constructor() { }
 

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./image-uploader.component.css']
 })
 export class ImageUploaderComponent implements OnInit {
+    favicon = 'fa fa-cloud-upload-alt';
+    sectionName = 'Image Uploader';
 
     constructor() {
     }

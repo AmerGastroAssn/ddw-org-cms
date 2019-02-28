@@ -76,7 +76,7 @@ export class SettingsService {
                 return null;
             } else {
                 const data = action.payload.data() as Settings;
-                data.$key = action.payload.id;
+                data.id = action.payload.id;
                 // console.log('data.key', data);
                 return data;
             }

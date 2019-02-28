@@ -28,6 +28,8 @@ import { CalendarService } from '../../services/calendar.service';
 })
 export class CalendarListComponent implements OnInit {
     calendarEvents$: Calendar[];
+    favicon = 'fa fa-calendar-alt';
+    sectionName = 'All Calendars';
 
     constructor(
       public calendarService: CalendarService,

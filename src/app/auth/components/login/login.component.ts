@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
     user: User;
     email: string;
     password: string;
+    favicon = 'fa fa-user-lock';
+    sectionName = 'Login';
 
 
     constructor(

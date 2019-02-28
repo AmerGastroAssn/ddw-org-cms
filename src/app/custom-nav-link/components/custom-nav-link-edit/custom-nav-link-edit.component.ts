@@ -50,6 +50,8 @@ export class CustomNavLinkEditComponent implements OnInit {
     isExtURL3: boolean;
     isExtURL4: boolean;
     isExtURL5: boolean;
+    favicon = 'fa fa-link';
+    sectionName = 'Nav Links';
 
 
     constructor(

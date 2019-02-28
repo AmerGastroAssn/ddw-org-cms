@@ -46,6 +46,8 @@ export class PageListComponent implements OnInit {
     startObs = this.startAt.asObservable();
     endObs = this.endAt.asObservable();
     lastKeyPress = 0;
+    favicon = 'fa fa-layer-group';
+    sectionName = 'Pages';
 
     constructor(
         private readonly pageService: PageService,

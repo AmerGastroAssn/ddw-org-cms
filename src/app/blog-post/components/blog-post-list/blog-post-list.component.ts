@@ -29,6 +29,8 @@ import { BlogPostService } from '../../services/blog-post.service';
 })
 export class BlogPostListComponent implements OnInit {
     blogPosts$: Observable<BlogPost[]>;
+    favicon = 'fa fa-window-restore';
+    sectionName = 'Blog Posts';
 
     constructor(
         private postService: BlogPostService

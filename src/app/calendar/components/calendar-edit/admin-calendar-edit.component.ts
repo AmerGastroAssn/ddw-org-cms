@@ -36,6 +36,8 @@ export class CalendarEditComponent implements OnInit {
     // @ViewChild('colVF') colVF: NgForm;
     calendar: Calendar;
     calColumnValues: CalColumnValues;
+    favicon = 'fa fa-calendar';
+    sectionName = 'Edit Calendar';
 
     $key: string;
     body1: string;

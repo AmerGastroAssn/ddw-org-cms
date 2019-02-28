@@ -16,6 +16,8 @@ interface Email {
 export class PasswordResetComponent implements OnInit {
     resetForm: FormGroup;
     email: Email;
+    favicon = 'fa fa-envelope-open';
+    sectionName = 'Password Reset';
 
 
     constructor(

@@ -20,6 +20,8 @@ export class PrivacyPolicyComponent implements OnInit {
     uid: string;
     author: string;
     currentUser: User;
+    favicon = 'fa fa-file-signature';
+    sectionName = 'Privacy Policy';
 
     CkeditorConfig = {
         allowedContent: true,

@@ -16,6 +16,8 @@ export class AdsComponent implements OnInit {
     headerbar: string;
     skyscraper: string;
     footerbar: string;
+    favicon = 'fa fa-money-bill-wave';
+    sectionName = 'Ad Scripts';
 
 
     constructor(

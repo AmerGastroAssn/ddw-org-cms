@@ -9,6 +9,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AnalyticsDashboardComponent implements OnInit {
     googleUrl: any;
     url: string;
+    favicon = 'fa fa-chart-pie';
+    sectionName = 'Analytics';
 
     constructor(
         private sanitizer: DomSanitizer,

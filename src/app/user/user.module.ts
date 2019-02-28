@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ProgressbarModule } from 'ngx-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { UserHomeComponent } from './components/user-home/user-home.component';
@@ -21,6 +22,7 @@ import { UserRoutingModule } from './user-routing.module';
         ReactiveFormsModule,
         RouterModule,
         ProgressbarModule,
+        SharedModule,
     ],
     declarations: [
         UserComponent,

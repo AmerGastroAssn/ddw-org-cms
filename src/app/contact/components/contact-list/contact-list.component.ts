@@ -36,6 +36,8 @@ export class ContactListComponent implements OnInit {
     $key: string;
     selectedContactFilter = 'sentDate';
     sortOptions: any[];
+    favicon = 'fa fa-address-book';
+    sectionName = 'Contacts';
 
     constructor(
         private contactService: ContactService,

@@ -23,6 +23,8 @@ export class ModalComponent implements OnInit {
     author: string;
     show: boolean;
     currentUser: User;
+    favicon = 'fa fa-window-alt';
+    sectionName = 'Alert Modal';
 
     CkeditorConfig = {
         allowedContent: true,

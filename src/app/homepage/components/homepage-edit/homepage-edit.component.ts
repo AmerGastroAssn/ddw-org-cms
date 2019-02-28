@@ -90,6 +90,8 @@ export class HomepageEditComponent implements OnInit {
     postOption1: string;
     postOption2: string;
     postOption3: string;
+    favicon: string;
+    sectionName: string;
 
     CkeditorConfig = {
         allowedContent: true,
@@ -107,6 +109,8 @@ export class HomepageEditComponent implements OnInit {
         private cardService: CardService,
         private postService: BlogPostService,
     ) {
+        this.favicon = 'fa fa-home';
+        this.sectionName = 'Home Page';
         // Get Countdown
         this.countdownService.getCountdownDetails().subscribe((countdown: Countdown) => {
             if (countdown) {

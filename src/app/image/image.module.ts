@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule, MatTooltipModule } from '@angular/material';
 import { ProgressbarModule } from 'ngx-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 import { ImageListComponent } from './components/image-list/image-list.component';
 import { ImageUploaderItemComponent } from './components/image-uploader/image-uploader-item/image-uploader-item.component';
 import { ImageUploaderComponent } from './components/image-uploader/image-uploader.component';
@@ -25,6 +26,7 @@ import { ImageService } from './services/image.service';
         MatSelectModule,
         MatTooltipModule,
         ProgressbarModule,
+        SharedModule,
     ],
     providers: [
         ImageService

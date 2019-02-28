@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BsDatepickerModule } from 'ngx-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 import { HomepageEditComponent } from './components/homepage-edit/homepage-edit.component';
 import { HomepageComponent } from './components/homepage.component';
 
@@ -13,7 +14,7 @@ import { HomepageService } from './services/homepage.service';
 @NgModule({
     declarations: [
         HomepageComponent,
-        HomepageEditComponent
+        HomepageEditComponent,
     ],
     imports: [
         CommonModule,
@@ -21,7 +22,8 @@ import { HomepageService } from './services/homepage.service';
         FormsModule,
         ReactiveFormsModule,
         CKEditorModule,
-        BsDatepickerModule.forRoot()
+        BsDatepickerModule.forRoot(),
+        SharedModule,
     ],
     providers: [
         HomepageService,

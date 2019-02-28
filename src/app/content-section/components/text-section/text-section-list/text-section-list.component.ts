@@ -46,6 +46,8 @@ export class TextSectionListComponent implements OnInit {
     startObs = this.startAt.asObservable();
     endObs = this.endAt.asObservable();
     lastKeyPress = 0;
+    favicon = 'fa fa-align-justify';
+    sectionName = 'Text Sections';
 
     constructor(
         private textSectionService: TextSectionService,

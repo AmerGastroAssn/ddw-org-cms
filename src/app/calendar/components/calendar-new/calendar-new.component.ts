@@ -33,7 +33,8 @@ import { CalendarService } from '../../services/calendar.service';
 export class CalendarNewComponent implements OnInit {
     newCalForm: FormGroup;
     calendar: Calendar;
-    // calColumnValues: CalColumnValues;
+    favicon = 'fa fa-calendar';
+    sectionName = 'New Calendar';
 
     $key: string;
     body1: string;

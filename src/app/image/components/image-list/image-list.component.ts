@@ -20,6 +20,8 @@ export class ImageListComponent implements OnInit {
     endAt = new Subject();
     startObs = this.startAt.asObservable();
     endObs = this.endAt.asObservable();
+    favicon = 'fa fa-images';
+    sectionName = 'Images';
 
     selectedViewNumber = 25;
     viewNumber: any[] = [

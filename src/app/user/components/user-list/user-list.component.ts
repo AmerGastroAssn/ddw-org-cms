@@ -37,6 +37,8 @@ export class UserListComponent implements OnInit {
     authUser: Observable<User>;
     id: string;
     onlineDate: string;
+    favicon = 'fa fa-users';
+    sectionName = 'All Users';
 
 
     constructor(
