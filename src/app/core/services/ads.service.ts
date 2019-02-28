@@ -13,7 +13,7 @@ export class AdsService {
     adsCollection: AngularFirestoreCollection<Ads[]>;
     adsDoc: AngularFirestoreDocument<Ads>;
     ads: Observable<Ads>;
-    $key: string;
+    id: string;
 
     constructor(
         private afs: AngularFirestore,
@@ -21,17 +21,17 @@ export class AdsService {
         private flashMessage: FlashMessagesService,
         public sbAlert: MatSnackBar,
     ) {
-        this.$key = 'stB5CaEitpZxkJ1KF7rJ';
+        this.id = 'stB5CaEitpZxkJ1KF7rJ';
     }
 
-    getAds(): Observable<Ads> {
-        this.adsDoc = this.afs.doc<Ads>(`ads/${this.$key}`);
+    getAd(): Observable<Ads> {
+        this.adsDoc = this.afs.doc<Ads>(`ads/${this.id}`);
         this.ads = this.adsDoc.snapshotChanges().map((action) => {
             if (action.payload.exists === false) {
                 return null;
             } else {
                 const data = action.payload.data() as Ads;
-                data.$key = action.payload.id;
+                data.id = action.payload.id;
                 return data;
             }
         });
@@ -39,8 +39,8 @@ export class AdsService {
         return this.ads;
     }
 
-    updateAds(updatedAds): void {
-        this.adsDoc = this.afs.doc<Ads>(`ads/${this.$key}`);
+    updateAds(updatedAds: Ads): void {
+        this.adsDoc = this.afs.doc<Ads>(`ads/${this.id}`);
 
         this.adsDoc.update(updatedAds)
             .then(() => {
