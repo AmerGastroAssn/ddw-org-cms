@@ -33,6 +33,7 @@ export class SidenavComponent implements OnInit {
     user: User;
     user$: Observable<User>;
     isAdmin: boolean;
+    logo: string;
 
     constructor(
         private authService: AuthService,
@@ -41,6 +42,7 @@ export class SidenavComponent implements OnInit {
         private afAuth: AngularFireAuth,
         private afs: AngularFirestore
     ) {
+        this.logo = 'https://s3.amazonaws.com/DDW/ddw-org/images/logos/gray-ddw-150.png';
     }
 
     ngOnInit() {
