@@ -8,8 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 export class LogoWatermarkComponent implements OnInit {
     @Input() favicon: string;
     @Input() sectionName: string;
+    logo: string;
 
-  constructor() { }
+  constructor() {
+      this.logo = 'https://s3.amazonaws.com/DDW/ddw-org/images/logos/ddw-color.png';
+  }
 
   ngOnInit() {
   }
