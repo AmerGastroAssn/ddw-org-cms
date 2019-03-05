@@ -12,9 +12,23 @@ Open up your terminal and clone the project:
     git clone git@github.com:AmerGastroAssn/ddw-org-cms.git
 
 
+Rename project to whatever you want:
+
+    mv ddw-org-cms new-project-name
+
+
+Delete Git Files:
+
+	rm -rf ~/.git
+
+Reinstall Git:
+
+	git init
+
+
 Change/Move into project directory:
 
-    cd ddw-org-cms
+    cd new-project-name
 
 Install dependencies:
 
@@ -40,7 +54,7 @@ It should be something like this (with your own values):
 
 ```typescript
 export const environment = {
-    production: false,
+    production: false, // false for regular folder, true for .prod folder
     firebase: {
         apiKey: 'key',
         authDomain: 'app-name.firebaseapp.com',
@@ -51,6 +65,13 @@ export const environment = {
     }
 };
 ```
+
+Change Logos in:
+
+`logo-watermark.component.ts`
+
+`sidenav-component.ts`
+
 
 **Setup/install Firebase Function dependencies**
 
@@ -75,4 +96,6 @@ Start Angular Server:
     ng serve
 
 Open browser to [http://localhost:4200](http://localhost:4200)
+
+
 
