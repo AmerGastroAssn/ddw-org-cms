@@ -17,6 +17,11 @@ Rename project to whatever you want:
     mv ddw-org-cms new-project-name
 
 
+Change/Move into project directory:
+
+    cd new-project-name
+
+
 Delete Git Files:
 
 	rm -rf ~/.git
@@ -24,11 +29,6 @@ Delete Git Files:
 Reinstall Git:
 
 	git init
-
-
-Change/Move into project directory:
-
-    cd new-project-name
 
 Install dependencies:
 
